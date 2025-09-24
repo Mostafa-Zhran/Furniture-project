@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا | نظم التظليل والهياكل المعدنية</title>
+    <meta name="description" content="تواصل مع فريقنا للحصول على استشارة مجانية حول أنظمة التظليل والهياكل المعدنية. نحن هنا لمساعدتك في العثور على الحل الأمثل لاحتياجاتك.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .contact-info-card {
+            transition: all 0.3s ease;
+        }
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <a href="../index.html" class="text-2xl font-bold">شعار الشركة</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
+                    <a href="../index.html" class="hover:text-blue-200 transition">الرئيسية</a>
+                    <a href="../products/" class="hover:text-blue-200 transition">المنتجات</a>
+                    <a href="../services/" class="hover:text-blue-200 transition">الخدمات</a>
+                    <a href="../about/" class="hover:text-blue-200 transition">من نحن</a>
+                    <a href="#" class="text-blue-200 font-semibold">اتصل بنا</a>
+                    <a href="../blog/" class="hover:text-blue-200 transition">المدونة</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="../index.html" class="block py-2 hover:bg-blue-700 px-2 rounded">الرئيسية</a>
+                <a href="../products/" class="block py-2 hover:bg-blue-700 px-2 rounded">المنتجات</a>
+                <a href="../services/" class="block py-2 hover:bg-blue-700 px-2 rounded">الخدمات</a>
+                <a href="../about/" class="block py-2 hover:bg-blue-700 px-2 rounded">من نحن</a>
+                <a href="index.html" class="block py-2 bg-blue-900 px-2 rounded">اتصل بنا</a>
+                <a href="../blog/" class="block py-2 hover:bg-blue-700 px-2 rounded">المدونة</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-blue-700 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">اتصل بنا</h1>
+            <p class="text-xl max-w-3xl mx-auto">نحن هنا لمساعدتك في العثور على الحل الأمثل لاحتياجاتك</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Contact Info 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md contact-info-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 mx-auto">
+                        <i class="fas fa-map-marker-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">العنوان</h3>
+                    <p class="text-gray-600 text-center">الرياض، المملكة العربية السعودية<br>ص.ب: 12345</p>
+                </div>
+                
+                <!-- Contact Info 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md contact-info-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 mx-auto">
+                        <i class="fas fa-phone-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">هاتف</h3>
+                    <p class="text-gray-600 text-center">
+                        <a href="tel:+966501234567" class="hover:text-blue-600 transition">+966 50 123 4567</a><br>
+                        <a href="tel:+966112345678" class="hover:text-blue-600 transition">+966 11 234 5678</a>
+                    </p>
+                </div>
+                
+                <!-- Contact Info 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md contact-info-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 mx-auto">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">البريد الإلكتروني</h3>
+                    <p class="text-gray-600 text-center">
+                        <a href="mailto:info@shadingsystems.com" class="hover:text-blue-600 transition">info@shadingsystems.com</a><br>
+                        <a href="mailto:support@shadingsystems.com" class="hover:text-blue-600 transition">support@shadingsystems.com</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-6">أرسل لنا رسالة</h2>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2">الاسم الكامل</label>
+                                <input type="text" id="name" name="name" required 
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2">البريد الإلكتروني</label>
+                                <input type="email" id="email" name="email" required 
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 mb-2">رقم الجوال</label>
+                            <input type="tel" id="phone" name="phone" 
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                placeholder="+966 5X XXX XXXX">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 mb-2">الموضوع</label>
+                            <select id="subject" name="subject" required 
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">اختر موضوع الرسالة</option>
+                                <option value="استفسار">استفسار</option>
+                                <option value="عرض سعر">عرض سعر</option>
+                                <option value="دعم فني">دعم فني</option>
+                                <option value="مقترحات">مقترحات</option>
+                                <option value="شكوى">شكوى</option>
+                                <option value="أخرى">أخرى</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-2">الرسالة</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="privacy" name="privacy" required 
+                                class="ml-2 h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                            <label for="privacy" class="text-gray-700 text-sm">
+                                أوافق على <a href="#" class="text-blue-600 hover:underline">سياسة الخصوصية</a> و<a href="#" class="text-blue-600 hover:underline">شروط الاستخدام</a>
+                            </label>
+                        </div>
+                        <button type="submit" 
+                            class="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition duration-300 font-medium">
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Map -->
+                <div class="bg-gray-100 rounded-lg overflow-hidden">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.857737783657!2d46.71391131500115!3d24.81095398407743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efc7f9d9f12c9%3A0x9d5b5e5e5e5e5e5e5!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; min-height: 500px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">الأسئلة الشائعة</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">إجابات على أكثر الأسئلة شيوعاً من عملائنا الكرام</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full text-right px-6 py-4 focus:outline-none font-medium flex justify-between items-center">
+                        <span>ما هي مدة تنفيذ مشروع التظليل؟</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600">تختلف مدة التنفيذ حسب حجم المشروع وتعقيده. بشكل عام، تتراوح مدة تنفيذ المشاريع المتوسطة من 2 إلى 4 أسابيع. وسيتم إبلاغك بالمدة المتوقعة بعد تقييم الموقع واحتياجاتك.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full text-right px-6 py-4 focus:outline-none font-medium flex justify-between items-center">
+                        <span>هل تقدمون ضمان على المنتجات والتركيب؟</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600">نعم، نقدم ضماناً على جميع منتجاتنا وخدماتنا. يختلف مدة الضمان حسب نوع المنتج، حيث تتراوح عادةً بين 2 إلى 10 سنوات. كما نقدم ضماناً على التركيب لمدة عام واحد.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full text-right px-6 py-4 focus:outline-none font-medium flex justify-between items-center">
+                        <span>كيف يمكنني طلب عرض سعر؟</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600">يمكنك طلب عرض سعر من خلال تعبئة نموذج الاتصال الموجود في هذه الصفحة، أو الاتصال بنا مباشرة على الأرقام المتوفرة. يرجى توفير أكبر قدر ممكن من التفاصيل عن احتياجاتك لمساعدتنا في تقديم عرض دقيق.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full text-right px-6 py-4 focus:outline-none font-medium flex justify-between items-center">
+                        <span>ما هي المناطق التي تقدمون خدماتكم فيها؟</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600">نقدم خدماتنا في جميع أنحاء المملكة العربية السعودية. ولدينا فرق عمل في مختلف المناطق لتقديم خدمة سريعة وفعالة. للاستفسار عن التغطية في منطقتك، يرجى التواصل معنا.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="faq-question w-full text-right px-6 py-4 focus:outline-none font-medium flex justify-between items-center">
+                        <span>هل تقدمون خدمة ما بعد البيع؟</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-4 hidden">
+                        <p class="text-gray-600">نعم، نقدم خدمة ما بعد البيع تشمل الصيانة الدورية والإصلاحات الطارئة. كما نوفر خدمة عملاء على مدار الساعة للرد على استفساراتكم وتقديم الدعم الفني اللازم.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">هل لديك استفسار آخر؟</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">فريق خدمة العملاء لدينا جاهز للإجابة على جميع استفساراتك على مدار الساعة</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+966501234567" class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                    <i class="fas fa-phone-alt ml-2"></i> اتصل بنا الآن
+                </a>
+                <a href="#contact-form" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition">
+                    <i class="far fa-envelope ml-2"></i> أرسل رسالة
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gray-50 rounded-lg p-8 shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-center">ساعات العمل</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">أيام العمل الرسمية</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between border-b pb-2">
+                                <span>السبت - الأربعاء:</span>
+                                <span class="font-medium">8:00 ص - 5:00 م</span>
+                            </li>
+                            <li class="flex justify-between border-b pb-2">
+                                <span>الخميس:</span>
+                                <span class="font-medium">8:00 ص - 2:00 م</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-red-500">الجمعة:</span>
+                                <span class="text-red-500 font-medium">مغلق</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">خدمة الطوارئ</h3>
+                        <p class="text-gray-600 mb-4">نقدم خدمة طوارئ على مدار الساعة طوال أيام الأسبوع للتعامل مع الحالات الطارئة.</p>
+                        <div class="bg-yellow-50 border-r-4 border-yellow-400 p-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-triangle text-yellow-400 text-xl"></i>
+                                </div>
+                                <div class="mr-3">
+                                    <p class="text-sm text-yellow-700">
+                                        للطوارئ خارج أوقات العمل الرسمية، يرجى الاتصال على: 
+                                        <a href="tel:+966501234567" class="font-semibold hover:underline">+966 50 123 4567</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl font-bold mb-4">اشترك في نشرتنا البريدية</h2>
+                <p class="text-gray-600 mb-6">احصل على آخر العروض والأخبار حول منتجاتنا وخدماتنا مباشرة إلى بريدك الإلكتروني</p>
+                <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                    <input type="email" placeholder=

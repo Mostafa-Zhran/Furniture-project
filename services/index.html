@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدماتنا | نظم التظليل والهياكل المعدنية</title>
+    <meta name="description" content="اكتشف مجموعة خدماتنا الشاملة في مجال أنظمة التظليل والهياكل المعدنية. نقدم حلولاً متكاملة تشمل التصميم والتركيب والصيانة.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <a href="../index.html" class="text-2xl font-bold">شعار الشركة</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
+                    <a href="../index.html" class="hover:text-blue-200 transition">الرئيسية</a>
+                    <a href="../products/" class="hover:text-blue-200 transition">المنتجات</a>
+                    <a href="#" class="text-blue-200 font-semibold">الخدمات</a>
+                    <a href="../about/" class="hover:text-blue-200 transition">من نحن</a>
+                    <a href="../contact/" class="hover:text-blue-200 transition">اتصل بنا</a>
+                    <a href="../blog/" class="hover:text-blue-200 transition">المدونة</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="../index.html" class="block py-2 hover:bg-blue-700 px-2 rounded">الرئيسية</a>
+                <a href="../products/" class="block py-2 hover:bg-blue-700 px-2 rounded">المنتجات</a>
+                <a href="#" class="block py-2 bg-blue-900 px-2 rounded">الخدمات</a>
+                <a href="../about/" class="block py-2 hover:bg-blue-700 px-2 rounded">من نحن</a>
+                <a href="../contact/" class="block py-2 hover:bg-blue-700 px-2 rounded">اتصل بنا</a>
+                <a href="../blog/" class="block py-2 hover:bg-blue-700 px-2 rounded">المدونة</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-blue-700 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">خدماتنا</h1>
+            <p class="text-xl max-w-3xl mx-auto">حلول متكاملة لأنظمة التظليل والهياكل المعدنية تلبي كافة احتياجاتك</p>
+        </div>
+    </header>
+
+    <!-- Main Services Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">خدماتنا الرئيسية</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md p-8 service-card border border-gray-100">
+                    <div class="text-blue-600 text-4xl mb-6">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">الدراسات والاستشارات</h3>
+                    <p class="text-gray-600 mb-6">نقدم دراسات متكاملة واستشارات هندسية متخصصة لضمان اختيار الحلول الأمثل لمشاريع التظليل والهياكل المعدنية</p>
+                    <a href="consultation/" class="text-blue-600 font-medium hover:underline">المزيد من التفاصيل <i class="fas fa-arrow-left mr-1"></i></a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md p-8 service-card border border-gray-100">
+                    <div class="text-blue-600 text-4xl mb-6">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">التصميم والتنفيذ</h3>
+                    <p class="text-gray-600 mb-6">تصميم مبتكر وتنفيذ دقيق لأنظمة التظليل والهياكل المعدنية وفقاً لأعلى المعايير الفنية والجودة</p>
+                    <a href="design/" class="text-blue-600 font-medium hover:underline">المزيد من التفاصيل <i class="fas fa-arrow-left mr-1"></i></a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md p-8 service-card border border-gray-100">
+                    <div class="text-blue-600 text-4xl mb-6">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">التركيب والتشغيل</h3>
+                    <p class="text-gray-600 mb-6">فريق فني متخصص لتركيب أنظمة التظليل والهياكل المعدنية باحترافية عالية وضمان التشغيل الأمثل</p>
+                    <a href="installation/" class="text-blue-600 font-medium hover:underline">المزيد من التفاصيل <i class="fas fa-arrow-left mr-1"></i></a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md p-8 service-card border border-gray-100">
+                    <div class="text-blue-600 text-4xl mb-6">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">الصيانة والدعم الفني</h3>
+                    <p class="text-gray-600 mb-6">خدمات صيانة دورية وطارئة مع توفير قطع الغيار الأصلية لضمان استمرارية الأداء الأمثل</p>
+                    <a href="maintenance/" class="text-blue-600 font-medium hover:underline">المزيد من التفاصيل <i class="fas fa-arrow-left mr-1"></i></a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md p-8 service-card border border-gray-100">
+                    <div class="text-blue-600 text-4xl mb-6">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">التشطيبات والتجهيزات</h3>
+                    <p class="text-gray-600 mb-6">تشطيبات عالية الجودة وإضافات تحسينية تتناسب مع ذوقك وتكمل المظهر الجمالي للمشروع</p>
+                    <a href="finishing/" class="text-blue-600 font-medium hover:underline">المزيد من التفاصيل <i class="fas fa-arrow-left mr-1"></i></a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md p-8 service-card border border-gray-100">
+                    <div class="text-blue-600 text-4xl mb-6">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">خدمة ما بعد البيع</h3>
+                    <p class="text-gray-600 mb-6">دعم فني متكامل وخدمة عملاء على مدار الساعة لضمان رضاك التام عن منتجاتنا وخدماتنا</p>
+                    <a href="after-sales/" class="text-blue-600 font-medium hover:underline">المزيد من التفاصيل <i class="fas fa-arrow-left mr-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">كيف نعمل</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">نتبع منهجية عمل واضحة لضمان تقديم أفضل الخدمات لعملائنا الكرام</p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-blue-200 transform -translate-x-1/2"></div>
+                
+                <!-- Timeline Items -->
+                <div class="space-y-12 md:space-y-16">
+                    <!-- Item 1 -->
+                    <div class="relative md:flex items-center">
+                        <div class="md:w-1/2 md:pr-16 md:text-right mb-4 md:mb-0">
+                            <h3 class="text-xl font-semibold mb-2">الاستشارة الأولية</h3>
+                            <p class="text-gray-600">نستمع لمتطلباتك ونقدم الاستشارات المناسبة لحلول التظليل والهياكل المعدنية</p>
+                        </div>
+                        <div class="hidden md:block w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold mx-auto flex-shrink-0 z-10">1</div>
+                        <div class="md:w-1/2 md:pl-16">
+                            <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="الاستشارة الأولية" class="w-full h-48 object-cover rounded-md mb-4">
+                                <p class="text-gray-600">نقوم بدراسة الموقع وتحديد المتطلبات والاحتياجات الخاصة بك</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="relative md:flex items-center">
+                        <div class="md:w-1/2 md:pr-16 md:order-3">
+                            <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                                <img src="https://images.unsplash.com/photo-1581094794329-a06ddb7e1a6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="التصميم والتصنيع" class="w-full h-48 object-cover rounded-md mb-4">
+                                <p class="text-gray-600">نقوم بتصميم وتصنيع المكونات بجودة عالية</p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold mx-auto flex-shrink-0 z-10 order-2">2</div>
+                        <div class="md:w-1/2 md:pl-16 md:text-right mb-4 md:mb-0 md:order-1">
+                            <h3 class="text-xl font-semibold mb-2">التصميم والتصنيع</h3>
+                            <p class="text-gray-600">نقوم بتصميم الحلول المناسبة وتصنيعها بمواد عالية الجودة</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="relative md:flex items-center">
+                        <div class="md:w-1/2 md:pr-16 md:text-right mb-4 md:mb-0">
+                            <h3 class="text-xl font-semibold mb-2">التركيب والتنفيذ</h3>
+                            <p class="text-gray-600">فريق فني متخصص لتنفيذ المشروع بدقة عالية واحترافية</p>
+                        </div>
+                        <div class="hidden md:block w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold mx-auto flex-shrink-0 z-10">3</div>
+                        <div class="md:w-1/2 md:pl-16">
+                            <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                                <img src="https://images.unsplash.com/photo-1581093057302-7fe6dfb56933?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="التركيب والتنفيذ" class="w-full h-48 object-cover rounded-md mb-4">
+                                <p class="text-gray-600">نقوم بتركيب النظام باحترافية مع مراعاة أعلى معايير الجودة والسلامة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">لماذا تختارنا</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-medal text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">جودة عالية</h3>
+                    <p class="text-gray-600">نستخدم أفضل المواد الخام وأحدث التقنيات في تصنيع منتجاتنا</p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-tie text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">خبرة واسعة</h3>
+                    <p class="text-gray-600">فريق من الخبراء ذوي الخبرة الواسعة في مجال التظليل والهياكل المعدنية</p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">ضمان ممتد</h3>
+                    <p class="text-gray-600">نقدم ضمانات ممتدة على جميع منتجاتنا وخدماتنا</p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">دعم فني متكامل</h3>
+                    <p class="text-gray-600">فريق دعم فني متاح على مدار الساعة لخدمتكم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">هل أنت مستعد لبدء مشروعك القادم؟</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">اتصل بنا اليوم للحصول على استشارة مجانية وتصميم مخصص يناسب احتياجاتك</p>
+            <a href="../contact/" class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">اطلب استشارة مجانية</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">عن الشركة</h3>
+                    <p class="text-gray-400">شركة رائدة في مجال أنظمة التظليل والهياكل المعدنية، نقدم حلولاً مبتكرة وعصرية تلبي احتياجات عملائنا.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
+                        <li><a href="../products/" class="text-gray-400 hover:text-white transition">المنتجات</a></li>
+                        <li><a href="#" class="text-white font-medium">الخدمات</a></li>
+                        <li><a href="../about/" class="text-gray-400 hover:text-white transition">من نحن</a></li>
+                        <li><a href="../contact/" class="text-gray-400 hover:text-white transition">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">معلومات الاتصال</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 ml-2"></i>
+                            <span>الرياض، المملكة العربية السعودية</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone ml-2"></i>
+                            <span>+966 50 123 4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope ml-2"></i>
+                            <span>info@shadingsystems.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">تابعنا</h3>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Twitter">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Facebook">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Instagram">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center text-gray-400">
+                <p>© 2023 جميع الحقوق محفوظة لشركة نظم التظليل والهياكل المعدنية</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 left-6 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
