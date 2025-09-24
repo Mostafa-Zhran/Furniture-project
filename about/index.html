@@ -37,46 +37,119 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-blue-800 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4 space-x-reverse">
-                    <a href="../index.html" class="text-2xl font-bold">شعار الشركة</a>
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100/50 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center space-x-2 space-x-reverse group">
+                        <div class="p-1.5 rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                            <img src="../images/logo.png" alt="شعار الشركة" class="h-7 w-auto">
+                        </div>
+                        <span class="text-xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+                            شادينج سيستمز
+                        </span>
+                    </a>
                 </div>
-                
+
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
-                    <a href="../index.html" class="hover:text-blue-200 transition">الرئيسية</a>
-                    <a href="../products/" class="hover:text-blue-200 transition">المنتجات</a>
-                    <a href="../services/" class="hover:text-blue-200 transition">الخدمات</a>
-                    <a href="#" class="text-blue-200 font-semibold">من نحن</a>
-                    <a href="../contact/" class="hover:text-blue-200 transition">اتصل بنا</a>
-                    <a href="../blog/" class="hover:text-blue-200 transition">المدونة</a>
-                    <button id="theme-toggle" class="text-blue-100 hover:text-white p-2 rounded-full focus:outline-none" aria-label="تبديل الوضع الليلي">
-                        <i class="fas fa-moon text-xl"></i>
-                    </button>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-2 md:space-x-reverse">
+                    <a href="../index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-home ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            الرئيسية
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="../products/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-boxes ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            المنتجات
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="../services/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-tools ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            الخدمات
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="#" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-blue-50 text-blue-700 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-info-circle ml-1.5 text-blue-600"></i>
+                            من نحن
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full"></span>
+                    </a>
+                    <a href="../contact/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-envelope ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            اتصل بنا
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="../blog/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-newspaper ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            المدونة
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
                 </div>
-                
+
                 <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="menu-btn" class="text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2.5 rounded-xl text-gray-700 hover:bg-blue-50/50 transition-all duration-300 relative group" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">فتح القائمة الرئيسية</span>
+                        <div class="space-y-1.5 group-hover:space-y-0.5 transition-all duration-300">
+                            <span class="block w-5 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 transform group-hover:translate-y-1 group-hover:rotate-45"></span>
+                            <span class="block w-4 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 opacity-100 group-hover:opacity-0"></span>
+                            <span class="block w-5 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 transform group-hover:-translate-y-1 group-hover:-rotate-45"></span>
+                        </div>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </button>
                 </div>
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="../index.html" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الرئيسية</a>
-                <a href="../products/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المنتجات</a>
-                <a href="../services/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الخدمات</a>
-                <a href="index.html" class="block py-2 bg-blue-900 px-2 rounded transition-colors">من نحن</a>
-                <a href="../contact/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">اتصل بنا</a>
-                <a href="../blog/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المدونة</a>
-                <button id="mobile-theme-toggle" class="w-full text-right py-2 px-2 rounded flex items-center justify-end hover:bg-blue-700 transition-colors">
-                    <span class="ml-2">الوضع الليلي</span>
-                    <i class="fas fa-moon"></i>
-                </button>
+            <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-100 overflow-hidden mt-2 mb-4">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="../index.html" class="flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg group">
+                        <i class="fas fa-home ml-2 text-blue-500 w-5 text-center"></i>
+                        الرئيسية
+                    </a>
+                    <a href="../products/" class="flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg group">
+                        <i class="fas fa-boxes ml-2 text-blue-500 w-5 text-center"></i>
+                        المنتجات
+                    </a>
+                    <a href="../services/" class="flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg group">
+                        <i class="fas fa-tools ml-2 text-blue-500 w-5 text-center"></i>
+                        الخدمات
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-3 text-base font-medium text-blue-700 bg-blue-50 rounded-lg group">
+                        <i class="fas fa-info-circle ml-2 text-blue-600 w-5 text-center"></i>
+                        من نحن
+                    </a>
+                    <a href="../contact/" class="flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg group">
+                        <i class="fas fa-envelope ml-2 text-blue-500 w-5 text-center"></i>
+                        اتصل بنا
+                    </a>
+                    <a href="../blog/" class="flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg group">
+                        <i class="fas fa-newspaper ml-2 text-blue-500 w-5 text-center"></i>
+                        المدونة
+                    </a>
+                    <button id="mobile-theme-toggle" class="w-full text-right px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg flex items-center justify-end group">
+                        <span class="ml-2">الوضع الليلي</span>
+                        <i class="fas fa-moon text-blue-500"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -133,47 +206,83 @@
     </section>
 
     <!-- Our Values -->
-    <section class="py-16 bg-white">
+    <section class="py-20 bg-white overflow-hidden">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">قيمنا</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-900 relative inline-block">
+                    <span class="relative z-10">قيمنا</span>
+                    <span class="absolute bottom-0 right-0 w-1/2 h-1.5 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full transform translate-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 mx-auto rounded-full mb-2"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">المبادئ التي نؤمن بها ونسير عليها في كل ما نقوم به</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center p-6 bg-gray-50 rounded-lg">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-medal text-2xl text-blue-600"></i>
+                <!-- Quality -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-6 group-hover:scale-110 transition-all duration-500">
+                            <i class="fas fa-medal text-3xl text-blue-600 group-hover:text-blue-700 transition-colors duration-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-700 transition-colors duration-300">الجودة</h3>
+                        <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">نلتزم بأعلى معايير الجودة في منتجاتنا وخدماتنا لنضمن رضاكم التام</p>
+                        <div class="mt-4">
+                            <span class="inline-block w-8 h-1 bg-blue-500 rounded-full transform group-hover:scale-x-125 transition-transform duration-300"></span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">الجودة</h3>
-                    <p class="text-gray-600">نلتزم بأعلى معايير الجودة في منتجاتنا وخدماتنا</p>
                 </div>
                 
-                <div class="text-center p-6 bg-gray-50 rounded-lg">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-lightbulb text-2xl text-blue-600"></i>
+                <!-- Innovation -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-6 group-hover:scale-110 transition-all duration-500">
+                            <i class="fas fa-lightbulb text-3xl text-blue-600 group-hover:text-blue-700 transition-colors duration-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-700 transition-colors duration-300">الابتكار</h3>
+                        <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">نبحث باستمرار عن حلول مبتكرة ومتقدمة تلبي احتياجاتكم المتطورة</p>
+                        <div class="mt-4">
+                            <span class="inline-block w-8 h-1 bg-blue-500 rounded-full transform group-hover:scale-x-125 transition-transform duration-300"></span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">الابتكار</h3>
-                    <p class="text-gray-600">نبحث عن حلول مبتكرة تلبي احتياجات عملائنا</p>
                 </div>
                 
-                <div class="text-center p-6 bg-gray-50 rounded-lg">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-handshake text-2xl text-blue-600"></i>
+                <!-- Reliability -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-6 group-hover:scale-110 transition-all duration-500">
+                            <i class="fas fa-handshake text-3xl text-blue-600 group-hover:text-blue-700 transition-colors duration-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-700 transition-colors duration-300">الموثوقية</h3>
+                        <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">نفي بوعودنا ونحافظ على ثقتكم من خلال الالتزام بالجودة والمواعيد</p>
+                        <div class="mt-4">
+                            <span class="inline-block w-8 h-1 bg-blue-500 rounded-full transform group-hover:scale-x-125 transition-transform duration-300"></span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">الموثوقية</h3>
-                    <p class="text-gray-600">نفي بوعودنا ونحافظ على ثقة عملائنا</p>
                 </div>
                 
-                <div class="text-center p-6 bg-gray-50 rounded-lg">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-2xl text-blue-600"></i>
+                <!-- Teamwork -->
+                <div class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-6 group-hover:scale-110 transition-all duration-500">
+                            <i class="fas fa-users text-3xl text-blue-600 group-hover:text-blue-700 transition-colors duration-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-700 transition-colors duration-300">العمل الجماعي</h3>
+                        <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">نعمل معاً كفريق متكامل لتحقيق أهدافنا المشتركة ورضا عملائنا</p>
+                        <div class="mt-4">
+                            <span class="inline-block w-8 h-1 bg-blue-500 rounded-full transform group-hover:scale-x-125 transition-transform duration-300"></span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">العمل الجماعي</h3>
-                    <p class="text-gray-600">نعمل معاً لتحقيق أهدافنا المشتركة</p>
                 </div>
             </div>
         </div>
+        
+        <!-- Animated Background Elements -->
+        <div class="absolute top-0 right-0 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
     </section>
 
     <!-- Our Team -->
