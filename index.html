@@ -21,92 +21,433 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-blue-800 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4 space-x-reverse">
-                    <a href="index.html" class="text-2xl font-bold">شعار الشركة</a>
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100/50 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center space-x-2 space-x-reverse group">
+                        <div class="p-1.5 rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                            <img src="../images/logo.png" alt="شعار الشركة" class="h-7 w-auto">
+                        </div>
+                        <span class="text-xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+                            شادينج سيستمز
+                        </span>
+                    </a>
                 </div>
-                
+
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
-                    <a href="index.html" class="hover:text-blue-200 transition">الرئيسية</a>
-                    <a href="products/" class="hover:text-blue-200 transition">المنتجات</a>
-                    <a href="services/" class="hover:text-blue-200 transition">الخدمات</a>
-                    <a href="about/" class="hover:text-blue-200 transition">من نحن</a>
-                    <a href="contact/" class="hover:text-blue-200 transition">اتصل بنا</a>
-                    <a href="blog/" class="hover:text-blue-200 transition">المدونة</a>
-                    <button id="theme-toggle" class="text-blue-100 hover:text-white p-2 rounded-full focus:outline-none" aria-label="تبديل الوضع الليلي">
-                        <i class="fas fa-moon text-xl"></i>
-                    </button>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-2 md:space-x-reverse">
+                    <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-blue-50 text-blue-700 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-home ml-1.5 text-blue-600"></i>
+                            الرئيسية
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full"></span>
+                    </a>
+                    <a href="products/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-boxes ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            المنتجات
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="services/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-tools ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            الخدمات
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="about/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-info-circle ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            من نحن
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="contact/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-envelope ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            اتصل بنا
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="blog/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-newspaper ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            المدونة
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
                 </div>
-                
+
                 <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="menu-btn" class="text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2.5 rounded-xl text-gray-700 hover:bg-blue-50/50 transition-all duration-300 relative group" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">فتح القائمة الرئيسية</span>
+                        <div class="space-y-1.5 group-hover:space-y-0.5 transition-all duration-300">
+                            <span class="block w-5 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 transform group-hover:translate-y-1 group-hover:rotate-45"></span>
+                            <span class="block w-4 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 opacity-100 group-hover:opacity-0"></span>
+                            <span class="block w-5 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 transform group-hover:-translate-y-1 group-hover:-rotate-45"></span>
+                        </div>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </button>
                 </div>
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="index.html" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الرئيسية</a>
-                <a href="products/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المنتجات</a>
-                <a href="services/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الخدمات</a>
-                <a href="about/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">من نحن</a>
-                <a href="contact/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">اتصل بنا</a>
-                <a href="blog/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المدونة</a>
-                <button id="mobile-theme-toggle" class="w-full text-right py-2 px-2 rounded flex items-center justify-end hover:bg-blue-700 transition-colors">
-                    <span class="ml-2">الوضع الليلي</span>
-                    <i class="fas fa-moon"></i>
-                </button>
+            <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-100 overflow-hidden mt-2 mb-4">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl bg-blue-50 text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-home ml-3 w-5 text-center text-blue-600"></i>
+                        <span>الرئيسية</span>
+                    </a>
+                    <a href="products/" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-boxes ml-3 w-5 text-center text-blue-600 opacity-70 group-hover:opacity-100 transition-opacity"></i>
+                        <span>المنتجات</span>
+                    </a>
+                    <a href="services/" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-tools ml-3 w-5 text-center text-blue-600 opacity-70 group-hover:opacity-100 transition-opacity"></i>
+                        <span>الخدمات</span>
+                    </a>
+                    <a href="about/" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-info-circle ml-3 w-5 text-center text-blue-600 opacity-70 group-hover:opacity-100 transition-opacity"></i>
+                        <span>من نحن</span>
+                    </a>
+                    <a href="contact/" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-envelope ml-3 w-5 text-center text-blue-600 opacity-70 group-hover:opacity-100 transition-opacity"></i>
+                        <span>اتصل بنا</span>
+                    </a>
+                    <a href="blog/" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-newspaper ml-3 w-5 text-center text-blue-600 opacity-70 group-hover:opacity-100 transition-opacity"></i>
+                        <span>المدونة</span>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
-    <header class="bg-blue-700 text-white py-20">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 text-center md:text-right mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">حلول تظليل مبتكرة لمشاريعك</h1>
-                <p class="text-xl mb-8">نقدم أفضل أنظمة التظليل والهياكل المعدنية بجودة عالية وتصميمات عصرية</p>
-                <div class="space-x-4 space-x-reverse">
-                    <a href="products/" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">تصفح المنتجات</a>
-                    <a href="contact/" class="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition">اتصل بنا</a>
+    <header class="relative bg-gradient-to-br from-teal-700 to-teal-500 text-white min-h-screen flex items-center overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0dGVybiBpZD0icGF0dGVybi1iYXNlIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxMjApIHNjYWxlKDAuMDUpIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ0cmFuc3BhcmVudCIvPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3BhdHRlcm4+PC9zdmc+')"></div>
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-teal-700/90 via-teal-600/50 to-teal-500/90 z-0"></div>
+        
+        <!-- Hero Content -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <!-- Text Content -->
+                <div class="lg:w-1/2 text-center lg:text-right mb-12 lg:mb-0 lg:pr-12">
+                    <span class="inline-block bg-white/20 backdrop-blur-sm text-teal-100 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">حلول تظليل مبتكرة</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 text-white drop-shadow-lg">
+                        <span class="bg-gradient-to-r from-white to-teal-100 bg-clip-text text-transparent">حلول تظليل</span><br>
+                        <span class="text-teal-100">لمشاريعك</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto lg:mx-0 lg:mr-0 text-teal-50 leading-relaxed">
+                        نقدم أفضل أنظمة التظليل والهياكل المعدنية بجودة عالية وتصاميم عصرية تناسب كافة الأذواق
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
+                        <a href="products/" class="group relative overflow-hidden bg-white text-teal-700 px-8 py-4 rounded-xl font-bold hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-lg">
+                            <span class="relative z-10 flex items-center justify-center">
+                                <i class="fas fa-shopping-cart ml-2"></i>
+                                تصفح المنتجات
+                            </span>
+                            <span class="absolute inset-0 bg-gradient-to-r from-teal-500 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        </a>
+                        <a href="contact/" class="group relative overflow-hidden bg-transparent border-2 border-white/50 text-white px-8 py-4 rounded-xl font-bold hover:border-white hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1 text-lg">
+                            <span class="relative z-10 flex items-center justify-center">
+                                <i class="fas fa-phone-alt ml-2"></i>
+                                اتصل بنا
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="mt-12 flex flex-wrap justify-center lg:justify-start items-center gap-6">
+                        <div class="flex items-center space-x-2 space-x-reverse">
+                            <div class="flex -space-x-2">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="عميل">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="عميل">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="عميل">
+                            </div>
+                            <div class="text-sm text-teal-100">
+                                <span class="font-semibold">+500</span> عميل واثق بنا
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-px h-8 bg-white/20"></div>
+                        <div class="flex items-center space-x-2 space-x-reverse">
+                            <div class="text-teal-100">
+                                <i class="fas fa-star text-yellow-300"></i>
+                                <i class="fas fa-star text-yellow-300"></i>
+                                <i class="fas fa-star text-yellow-300"></i>
+                                <i class="fas fa-star text-yellow-300"></i>
+                                <i class="fas fa-star text-yellow-300"></i>
+                            </div>
+                            <span class="text-sm font-medium">4.9/5</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="نظام تظليل حديث" class="rounded-lg shadow-xl">
+                
+                <!-- Image Slider -->
+                <div class="lg:w-1/2 w-full h-[350px] md:h-[450px] lg:h-[550px] relative rounded-2xl overflow-hidden shadow-2xl transform lg:translate-y-0 group">
+                    <!-- Decorative Elements -->
+                    <div class="absolute -inset-1 bg-gradient-to-br from-teal-400/20 to-teal-600/30 rounded-2xl transform rotate-1 scale-95 group-hover:rotate-0 group-hover:scale-100 transition-all duration-700"></div>
+                    
+                    <!-- Hero Slider -->
+                    <div class="hero-slider relative w-full h-full rounded-xl overflow-hidden">
+                        <!-- Slide 1 -->
+                        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" data-active>
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="نظام تظليل حديث" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+                            <img src="https://images.unsplash.com/photo-1600566752225-4f5d8f0c05c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="هياكل معدنية متطورة" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+                            <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="تصاميم خارجية أنيقة" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                        </div>
+                </div>
+                <!-- Navigation Dots -->
+                <div class="absolute bottom-6 left-0 right-0 flex justify-center items-center">
+                    <button class="dot-nav" data-slide="0" aria-label="الانتقال إلى الشريحة 1"></button>
+                    <button class="dot-nav" data-slide="1" aria-label="الانتقال إلى الشريحة 2"></button>
+                    <button class="dot-nav" data-slide="2" aria-label="الانتقال إلى الشريحة 3"></button>
+                </div>
             </div>
         </div>
     </header>
+
+    <!-- Guest Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">من نحن</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">نحن رواد في مجال أنظمة التظليل والهياكل المعدنية، نقدم حلولاً مبتكرة وعصرية تلبي احتياجات عملائنا بأعلى معايير الجودة والكفاءة.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="card-animate card-hover bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative group" style="--delay: 1">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative z-10 flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 group-hover:bg-blue-200 transition-colors duration-300">
+                                <i class="fas fa-lightbulb text-blue-600 text-xl transform group-hover:scale-110 transition-transform duration-300"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-800 group-hover:text-blue-700 transition-colors duration-300">رؤيتنا</h3>
+                                <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">أن نكون الخيار الأول في مجال أنظمة التظليل والهياكل المعدنية من خلال الابتكار والجودة والتميز في الخدمة.</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full h-1 bg-blue-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    </div>
+                    
+                    <div class="card-animate card-hover bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative group mt-6" style="--delay: 2">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative z-10 flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4 group-hover:bg-green-200 transition-colors duration-300">
+                                <i class="fas fa-bullseye text-green-600 text-xl transform group-hover:scale-110 transition-transform duration-300"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-800 group-hover:text-green-700 transition-colors duration-300">رسالتنا</h3>
+                                <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">تقديم حلول تظليل متكاملة تجمع بين الجمال والوظيفة، مع الالتزام بأعلى معايير الجودة والاستدامة.</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full h-1 bg-green-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    </div>
+                    
+                    <div class="card-animate card-hover bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative group mt-6" style="--delay: 3">
+                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative z-10 flex items-start">
+                            <div class="bg-yellow-100 p-3 rounded-full mr-4 group-hover:bg-yellow-200 transition-colors duration-300">
+                                <i class="fas fa-star text-yellow-600 text-xl transform group-hover:scale-110 transition-transform duration-300"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 text-gray-800 group-hover:text-yellow-700 transition-colors duration-300">قيمنا</h3>
+                                <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">نؤمن بالجودة، الابتكار، النزاهة، والرضا التام للعملاء كأساس لنجاحنا واستمراريتنا.</p>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full h-1 bg-yellow-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    </div>
+                </div>
+                
+                <div class="relative guest-slider-container group">
+                    <!-- Guest Slider -->
+                    <div class="guest-slider relative rounded-2xl overflow-hidden shadow-2xl">
+                        <!-- Slides -->
+                        <div class="guest-slides-container relative h-80 md:h-96 lg:h-[28rem] xl:h-[32rem]">
+                            <!-- Slide 1 -->
+                            <div class="guest-slide absolute inset-0 transition-all duration-700 ease-in-out transform opacity-0 scale-95">
+                                <div class="absolute inset-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                                         alt="فريق العمل" 
+                                         class="w-full h-full object-cover transition-transform duration-10000 ease-linear guest-slide-img">
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-6 md:p-8">
+                                    <div class="transform translate-y-4 opacity-0 transition-all duration-700 ease-out guest-slide-content">
+                                        <h3 class="text-2xl md:text-3xl font-bold mb-2 text-white drop-shadow-lg">فريقنا الخبير</h3>
+                                        <p class="text-white/90 max-w-md text-sm md:text-base">فريق من المهندسين والفنيين المتخصصين لضمان أعلى معايير الجودة والكفاءة في تنفيذ المشاريع</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 2 -->
+                            <div class="guest-slide absolute inset-0 transition-all duration-700 ease-in-out transform opacity-0 scale-95">
+                                <div class="absolute inset-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                                         alt="مشاريعنا" 
+                                         class="w-full h-full object-cover transition-transform duration-10000 ease-linear guest-slide-img">
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-6 md:p-8">
+                                    <div class="transform translate-y-4 opacity-0 transition-all duration-700 ease-out guest-slide-content">
+                                        <h3 class="text-2xl md:text-3xl font-bold mb-2 text-white drop-shadow-lg">مشاريعنا</h3>
+                                        <p class="text-white/90 max-w-md text-sm md:text-base">أحدث مشاريعنا التي نفخر بتنفيذها بدقة عالية واحترافية لا مثيل لها</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 3 -->
+                            <div class="guest-slide absolute inset-0 transition-all duration-700 ease-in-out transform opacity-0 scale-95">
+                                <div class="absolute inset-0 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                                         alt="التقنيات الحديثة" 
+                                         class="w-full h-full object-cover transition-transform duration-10000 ease-linear guest-slide-img">
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end p-6 md:p-8">
+                                    <div class="transform translate-y-4 opacity-0 transition-all duration-700 ease-out guest-slide-content">
+                                        <h3 class="text-2xl md:text-3xl font-bold mb-2 text-white drop-shadow-lg">التقنيات الحديثة</h3>
+                                        <p class="text-white/90 max-w-md text-sm md:text-base">نواكب أحدث التقنيات في مجال التصميم والتنفيذ لضمان الجودة والكفاءة</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Arrows -->
+                        <button class="guest-slider-prev absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/90 text-blue-700 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg z-10 hover:bg-white transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" aria-label="الشريحة السابقة">
+                            <i class="fas fa-chevron-right text-lg"></i>
+                        </button>
+                        <button class="guest-slider-next absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/90 text-blue-700 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg z-10 hover:bg-white transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" aria-label="الشريحة التالية">
+                            <i class="fas fa-chevron-left text-lg"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Navigation Dots -->
+                    <div class="guest-dots-container mt-6 flex justify-center items-center space-x-3">
+                        <button class="guest-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" data-guest-slide="0" aria-label="الانتقال إلى الشريحة 1"></button>
+                        <button class="guest-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" data-guest-slide="1" aria-label="الانتقال إلى الشريحة 2"></button>
+                        <button class="guest-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" data-guest-slide="2" aria-label="الانتقال إلى الشريحة 3"></button>
+                    </div>
+                    
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-600 rounded-full opacity-20 -z-10"></div>
+                    <div class="absolute -top-6 -left-6 w-24 h-24 bg-yellow-400 rounded-full opacity-20 -z-10"></div>
+                </div>
+            </div>
+            
+            <!-- Services -->
+            <div class="mt-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">خدماتنا</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card-animate card-hover bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative group" style="--delay: 1">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative z-10">
+                            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                                <i class="fas fa-sun text-2xl text-blue-600 group-hover:scale-110 transition-transform duration-300"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-700 transition-colors duration-300">أنظمة التظليل</h3>
+                            <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 mb-4">تصميم وتنفيذ أنظمة تظليل مبتكرة تناسب مختلف الأماكن والاحتياجات</p>
+                            <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group-hover:translate-x-1 transition-transform duration-300">
+                                اكتشف المزيد <i class="fas fa-arrow-right mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
+                            </a>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full h-1 bg-blue-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    </div>
+                    
+                    <div class="card-animate card-hover bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative group" style="--delay: 2">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative z-10">
+                            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                                <i class="fas fa-building text-2xl text-green-600 group-hover:scale-110 transition-transform duration-300"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-green-700 transition-colors duration-300">الهياكل المعدنية</h3>
+                            <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 mb-4">تصنيع وتركيب هياكل معدنية متطورة بمواصفات عالية الجودة</p>
+                            <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group-hover:translate-x-1 transition-transform duration-300">
+                                اكتشف المزيد <i class="fas fa-arrow-right mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
+                            </a>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full h-1 bg-green-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    </div>
+                    
+                    <div class="card-animate card-hover bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative group" style="--delay: 3">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative z-10">
+                            <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                                <i class="fas fa-tools text-2xl text-purple-600 group-hover:scale-110 transition-transform duration-300"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-purple-700 transition-colors duration-300">صيانة وإصلاح</h3>
+                            <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 mb-4">خدمات صيانة دورية وإصلاحات لضمان استمرارية الأداء الأمثل</p>
+                            <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium group-hover:translate-x-1 transition-transform duration-300">
+                                اكتشف المزيد <i class="fas fa-arrow-right mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
+                            </a>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full h-1 bg-purple-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Features Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">لماذا تختارنا؟</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-                    <div class="text-blue-600 text-4xl mb-4">
-                        <i class="fas fa-medal"></i>
+                <div class="card-animate card-hover bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative group transform hover:-translate-y-2" style="--delay: 1">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors duration-300">
+                            <i class="fas fa-medal text-3xl text-blue-600 group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-700 transition-colors duration-300">جودة عالية</h3>
+                        <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">نستخدم أفضل المواد الخام وأحدث التقنيات في تصنيع منتجاتنا</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">جودة عالية</h3>
-                    <p class="text-gray-600">نستخدم أفضل المواد الخام وأحدث التقنيات في تصنيع منتجاتنا</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-                    <div class="text-blue-600 text-4xl mb-4">
-                        <i class="fas fa-tools"></i>
+                
+                <div class="card-animate card-hover bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative group transform hover:-translate-y-2" style="--delay: 2">
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors duration-300">
+                            <i class="fas fa-tools text-3xl text-green-600 group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-green-700 transition-colors duration-300">تركيب محترف</h3>
+                        <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">فريق من الفنيين المهرة لضمان تركيب مثالي وآمن</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">تركيب محترف</h3>
-                    <p class="text-gray-600">فريق من الفنيين المهرة لضمان تركيب مثالي وآمن</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center">
-                    <div class="text-blue-600 text-4xl mb-4">
-                        <i class="fas fa-shield-alt"></i>
+                
+                <div class="card-animate card-hover bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden relative group transform hover:-translate-y-2" style="--delay: 3">
+                    <div class="absolute inset-0 bg-gradient-to-br from-yellow-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-200 transition-colors duration-300">
+                            <i class="fas fa-shield-alt text-3xl text-yellow-600 group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-yellow-700 transition-colors duration-300">ضمان ممتد</h3>
+                        <p class="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">نقدم ضمانًا ممتدًا على جميع منتجاتنا وخدماتنا</p>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">ضمان ممتد</h3>
-                    <p class="text-gray-600">نقدم ضمانًا ممتدًا على جميع منتجاتنا وخدماتنا</p>
                 </div>
             </div>
         </div>
@@ -120,183 +461,316 @@
                 <a href="products/" class="text-blue-600 hover:underline">عرض الكل</a>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="مظلات قابلة للسحب" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">مظلات قابلة للسحب</h3>
-                        <p class="text-gray-600 mb-4">حل مثالي للمساحات الخارجية يمكن التحكم فيه بسهولة</p>
-                        <a href="products/retractable-awnings.html" class="text-blue-600 hover:underline">المزيد من التفاصيل</a>
+                <div class="card-animate card-hover bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group" style="--delay: 1">
+                    <div class="overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                            alt="مظلات قابلة للسحب" 
+                            class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute -top-4 right-6 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium transform group-hover:translate-y-0 translate-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300">جديد</div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 group-hover:text-blue-700 transition-colors duration-300">مظلات قابلة للسحب</h3>
+                        <p class="text-gray-600 mb-4 group-hover:text-gray-700 transition-colors duration-300">حل مثالي للمساحات الخارجية يمكن التحكم فيه بسهولة</p>
+                        <div class="flex justify-between items-center">
+                            <a href="products/retractable-awnings.html" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center group-hover:translate-x-1 transition-transform duration-300">
+                                المزيد من التفاصيل <i class="fas fa-arrow-right mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
+                            </a>
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
-                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="شبكات التظليل" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">شبكات التظليل</h3>
-                        <p class="text-gray-600 mb-4">حماية من أشعة الشمس مع توفير التهوية المناسبة</p>
-                        <a href="products/shade-nets.html" class="text-blue-600 hover:underline">المزيد من التفاصيل</a>
+                
+                <div class="card-animate card-hover bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group" style="--delay: 2">
+                    <div class="overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                            alt="شبكات التظليل" 
+                            class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute -top-4 right-6 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium transform group-hover:translate-y-0 translate-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300">الأكثر طلباً</div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 group-hover:text-green-700 transition-colors duration-300">شبكات التظليل</h3>
+                        <p class="text-gray-600 mb-4 group-hover:text-gray-700 transition-colors duration-300">حماية من أشعة الشمس مع توفير التهوية المناسبة</p>
+                        <div class="flex justify-between items-center">
+                            <a href="products/shade-nets.html" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center group-hover:translate-x-1 transition-transform duration-300">
+                                المزيد من التفاصيل <i class="fas fa-arrow-right mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
+                            </a>
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
-                    <img src="https://images.unsplash.com/photo-1600566752225-4f5a9c3c3e38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="برجولات معدنية" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">برجولات معدنية</h3>
-                        <p class="text-gray-600 mb-4">تصميمات عصرية تجمع بين الجمال والمتانة</p>
-                        <a href="products/pergolas.html" class="text-blue-600 hover:underline">المزيد من التفاصيل</a>
+                
+                <div class="card-animate card-hover bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group" style="--delay: 3">
+                    <div class="overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1600566752225-4f5a9c3c3e38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                            alt="برجولات معدنية" 
+                            class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute -top-4 right-6 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium transform group-hover:translate-y-0 translate-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300">تخفيض 15%</div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-800 group-hover:text-purple-700 transition-colors duration-300">برجولات معدنية</h3>
+                        <p class="text-gray-600 mb-4 group-hover:text-gray-700 transition-colors duration-300">تصميمات عصرية تجمع بين الجمال والمتانة</p>
+                        <div class="flex justify-between items-center">
+                            <a href="products/pergolas.html" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center group-hover:translate-x-1 transition-transform duration-300">
+                                المزيد من التفاصيل <i class="fas fa-arrow-right mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
+                            </a>
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Partners Section -->
-    <section class="partners-section">
-        <div class="partners-container">
-            <div class="partners-header">
-                <h2>شركاؤنا</h2>
-                <p>نفتخر بشراكتنا مع أبرز العلامات التجارية الرائدة في مجالنا</p>
-            </div>
-            
-            <div class="partners-slider">
-                <button id="prev-partner" class="slider-nav" aria-label="الشريط السابق">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                
-                <div class="overflow-hidden">
-                    <div id="partners-slider" class="flex">
-                        <!-- Partner 1 -->
-                        <div class="px-2">
-                            <div class="partner-logo">
-                                <a href="#" class="block w-full h-full flex items-center justify-center" target="_blank" rel="noopener noreferrer">
-                                    <img src="https://via.placeholder.com/200x80?text=شريك+1" alt="شريك 1">
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <!-- Partner 2 -->
-                        <div class="px-2">
-                            <div class="partner-logo">
-                                <a href="#" class="block w-full h-full flex items-center justify-center" target="_blank" rel="noopener noreferrer">
-                                    <img src="https://via.placeholder.com/200x80?text=شريك+2" alt="شريك 2">
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <!-- Partner 3 -->
-                        <div class="px-2">
-                            <div class="partner-logo">
-                                <a href="#" class="block w-full h-full flex items-center justify-center" target="_blank" rel="noopener noreferrer">
-                                    <img src="https://via.placeholder.com/200x80?text=شريك+3" alt="شريك 3">
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <!-- Partner 4 -->
-                        <div class="px-2">
-                            <div class="partner-logo">
-                                <a href="#" class="block w-full h-full flex items-center justify-center" target="_blank" rel="noopener noreferrer">
-                                    <img src="https://via.placeholder.com/200x80?text=شريك+4" alt="شريك 4">
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <!-- Partner 5 -->
-                        <div class="px-2">
-                            <div class="partner-logo">
-                                <a href="#" class="block w-full h-full flex items-center justify-center" target="_blank" rel="noopener noreferrer">
-                                    <img src="https://via.placeholder.com/200x80?text=شريك+5" alt="شريك 5">
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <!-- Partner 6 -->
-                        <div class="px-2">
-                            <div class="partner-logo">
-                                <a href="#" class="block w-full h-full flex items-center justify-center" target="_blank" rel="noopener noreferrer">
-                                    <img src="https://via.placeholder.com/200x80?text=شريك+6" alt="شريك 6">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <button id="next-partner" class="slider-nav" aria-label="الشريط التالي">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                
-                <!-- Dots Navigation -->
-                <div class="dots-container">
-                    <button class="dot active" data-index="0" aria-label="انتقل إلى الشريحة 1"></button>
-                    <button class="dot" data-index="1" aria-label="انتقل إلى الشريحة 2"></button>
-                    <button class="dot" data-index="2" aria-label="انتقل إلى الشريحة 3"></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
-    <section class="py-16 bg-blue-700 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">هل أنت مستعد لبدء مشروعك القادم؟</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">اتصل بنا اليوم للحصول على استشارة مجانية وتصميم مخصص يناسب احتياجاتك</p>
-            <a href="contact/" class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">اطلب عرض سعر</a>
+    <section class="relative py-20 md:py-24 overflow-hidden bg-gradient-to-r from-blue-600 to-teal-600 text-white">
+        <!-- Decorative Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -right-20 -top-20 w-96 h-96 bg-white/5 rounded-full"></div>
+            <div class="absolute -left-20 -bottom-20 w-96 h-96 bg-white/5 rounded-full"></div>
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0dGVybiBpZD0icGF0dGVybi1iYXNlIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxMjApIHNjYWxlKDAuMDUpIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ0cmFuc3BhcmVudCIvPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3BhdHRlcm4+PC9zdmc+')]"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="inline-block bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-6">ابدأ مشروعك اليوم</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">هل أنت مستعد لبدء مشروعك القادم؟</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-white/60 to-white/20 mx-auto mb-8 rounded-full"></div>
+                <p class="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">اتصل بنا اليوم للحصول على استشارة مجانية وتصميم مخصص يناسب احتياجاتك</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="contact/" class="cta-button relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-xl overflow-hidden group transition-all duration-300 hover:from-blue-700 hover:to-blue-800 hover:shadow-lg hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <span class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-file-invoice-dollar ml-3 group-hover:scale-110 transition-transform duration-300"></i>
+                            <span class="mr-2">اطلب عرض سعر</span>
+                        </span>
+                        <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-white/30 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </a>
+                    
+                    <a href="tel:+966123456789" class="cta-button-2 relative group inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-phone-alt ml-2 text-sm"></i>
+                            <span>+966 12 345 6789</span>
+                        </span>
+                        <span class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300"></span>
+                    </a>
+                </div>
+                
+                <div class="mt-8 flex flex-wrap justify-center items-center gap-4 text-sm text-blue-100">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-300 mr-2"></i>
+                        <span>استشارة مجانية</span>
+                    </div>
+                    <div class="w-1 h-1 bg-white/30 rounded-full"></div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-300 mr-2"></i>
+                        <span>تصميم مخصص</span>
+                    </div>
+                    <div class="w-1 h-1 bg-white/30 rounded-full"></div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-300 mr-2"></i>
+                        <span>ضمان الجودة</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-12 pb-6">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">عن الشركة</h3>
-                    <p class="text-gray-400">شركة رائدة في مجال أنظمة التظليل والهياكل المعدنية، نقدم حلولاً مبتكرة وعصرية تلبي احتياجات عملائنا.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
-                        <li><a href="products/" class="text-gray-400 hover:text-white transition">المنتجات</a></li>
-                        <li><a href="services/" class="text-gray-400 hover:text-white transition">الخدمات</a></li>
-                        <li><a href="about/" class="text-gray-400 hover:text-white transition">من نحن</a></li>
-                        <li><a href="contact/" class="text-gray-400 hover:text-white transition">اتصل بنا</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">معلومات الاتصال</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 ml-2"></i>
-                            <span>الرياض، المملكة العربية السعودية</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-phone ml-2"></i>
-                            <span>+966 50 123 4567</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope ml-2"></i>
-                            <span>info@shadingsystems.com</span>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">تابعنا</h3>
+    <footer class="bg-gradient-to-b from-gray-900 to-gray-800 text-white pt-16 pb-8 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute inset-0 overflow-hidden opacity-10">
+            <div class="absolute -right-40 -top-40 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl"></div>
+            <div class="absolute -left-40 -bottom-40 w-96 h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                <!-- Company Info -->
+                <div class="lg:pr-6">
+                    <div class="flex items-center mb-6">
+                        <h3 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">Shading<span class="text-white">Systems</span></h3>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">شركة رائدة في مجال أنظمة التظليل والهياكل المعدنية، نقدم حلولاً مبتكرة وعصرية تلبي احتياجات عملائنا.</p>
                     <div class="flex space-x-4 space-x-reverse">
-                        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Twitter">
-                            <i class="fab fa-twitter text-2xl"></i>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 text-white flex items-center justify-center transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg" aria-label="Twitter">
+                            <i class="fab fa-twitter text-lg"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Facebook">
-                            <i class="fab fa-facebook text-2xl"></i>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-700 text-white flex items-center justify-center transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-lg"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Instagram">
-                            <i class="fab fa-instagram text-2xl"></i>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gradient-to-r from-pink-600 to-purple-600 text-white flex items-center justify-center transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg" aria-label="Instagram">
+                            <i class="fab fa-instagram text-lg"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin text-2xl"></i>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 text-white flex items-center justify-center transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg" aria-label="YouTube">
+                            <i class="fab fa-youtube text-lg"></i>
                         </a>
                     </div>
                 </div>
+                <!-- Products Section -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-12 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-teal-500 after:rounded-full">منتجاتنا</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="products/#pergolas" class="flex items-center text-gray-300 hover:text-white transition-all duration-300 group">
+                                <i class="fas fa-chevron-left text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 group-hover:translate-x-0"></i>
+                                <span class="mr-2 group-hover:mr-3 transition-all duration-300">المظلات</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="products/#shades" class="flex items-center text-gray-300 hover:text-white transition-all duration-300 group">
+                                <i class="fas fa-chevron-left text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 group-hover:translate-x-0"></i>
+                                <span class="mr-2 group-hover:mr-3 transition-all duration-300">الشدات</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="products/#glass" class="flex items-center text-gray-300 hover:text-white transition-all duration-300 group">
+                                <i class="fas fa-chevron-left text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 group-hover:translate-x-0"></i>
+                                <span class="mr-2 group-hover:mr-3 transition-all duration-300">الزجاج المظلل</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="products/#wooden" class="flex items-center text-gray-300 hover:text-white transition-all duration-300 group">
+                                <i class="fas fa-chevron-left text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 group-hover:translate-x-0"></i>
+                                <span class="mr-2 group-hover:mr-3 transition-all duration-300">الهياكل الخشبية</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="products/#metal" class="flex items-center text-gray-300 hover:text-white transition-all duration-300 group">
+                                <i class="fas fa-chevron-left text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 group-hover:translate-x-0"></i>
+                                <span class="mr-2 group-hover:mr-3 transition-all duration-300">الهياكل المعدنية</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-12 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-teal-500 after:rounded-full">روابط سريعة</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="index.html" class="flex items-center text-gray-300 hover:text-white transition-all duration-300 group">
+                                <i class="fas fa-chevron-left text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 group-hover:translate-x-0"></i>
+                                <span class="mr-2 group-hover:mr-3 transition-all duration-300">الرئيسية</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="products/" class="flex items-center text-gray-300 hover:text-white transition-all duration-300 group">
+                                <i class="fas fa-chevron-left text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 group-hover:translate-x-0"></i>
+                                <span class="mr-2 group-hover:mr-3 transition-all duration-300">المنتجات</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="services/" class="flex items-center text-gray-300 hover:text-white transition-all duration-300 group">
+                                <i class="fas fa-chevron-left text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 group-hover:translate-x-0"></i>
+                                <span class="mr-2 group-hover:mr-3 transition-all duration-300">الخدمات</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about/" class="flex items-center text-gray-300 hover:text-white transition-all duration-300 group">
+                                <i class="fas fa-chevron-left text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 group-hover:translate-x-0"></i>
+                                <span class="mr-2 group-hover:mr-3 transition-all duration-300">من نحن</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact/" class="flex items-center text-gray-300 hover:text-white transition-all duration-300 group">
+                                <i class="fas fa-chevron-left text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 group-hover:translate-x-0"></i>
+                                <span class="mr-2 group-hover:mr-3 transition-all duration-300">اتصل بنا</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-12 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-teal-500 after:rounded-full">معلومات الاتصال</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start group">
+                            <div class="w-10 h-10 rounded-full bg-gray-800 flex-shrink-0 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span class="mr-3 text-gray-300 group-hover:text-white transition-colors duration-300">الرياض، المملكة العربية السعودية</span>
+                        </li>
+                        <li class="flex items-center group">
+                            <div class="w-10 h-10 rounded-full bg-gray-800 flex-shrink-0 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                <i class="fas fa-phone-alt text-sm"></i>
+                            </div>
+                            <a href="tel:+966501234567" class="mr-3 text-gray-300 hover:text-white transition-colors duration-300">+966 50 123 4567</a>
+                        </li>
+                        <li class="flex items-center group">
+                            <div class="w-10 h-10 rounded-full bg-gray-800 flex-shrink-0 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                <i class="fas fa-envelope text-sm"></i>
+                            </div>
+                            <a href="mailto:info@shadingsystems.com" class="mr-3 text-gray-300 hover:text-white transition-colors duration-300">info@shadingsystems.com</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Working Hours -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 relative pb-3 after:content-[''] after:absolute after:right-0 after:bottom-0 after:w-12 after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-teal-500 after:rounded-full">ساعات العمل</h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between items-center text-gray-300">
+                            <span>السبت - الخميس</span>
+                            <span class="font-medium">9:00 ص - 6:00 م</span>
+                        </li>
+                        <li class="flex justify-between items-center text-gray-300">
+                            <span>الجمعة</span>
+                            <span class="font-medium">مغلق</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold mb-4 text-white">تواصل معنا</h4>
+                        <p class="text-gray-300 text-sm mb-4">للاستفسارات أو طلب استشارة مجانية</p>
+                        <a href="contact/" class="inline-flex items-center justify-center px-5 py-2.5 bg-gradient-to-r from-blue-600 to-teal-600 text-white rounded-lg hover:opacity-90 transition-opacity duration-300 text-sm font-medium">
+                            <i class="fas fa-envelope ml-2"></i>
+                            أرسل رسالة
+                        </a>
+                        <div class="mt-4 flex items-center text-sm text-gray-400">
+                            <i class="fas fa-phone-alt ml-2 text-blue-400"></i>
+                            <span>متوفر 24/7 للدعم الفني</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="border-t border-gray-800 pt-6 text-center text-gray-400">
-                <p>© 2023 جميع الحقوق محفوظة لشركة نظم التظليل والهياكل المعدنية</p>
+            
+            <!-- Divider -->
+            <div class="border-t border-gray-800 my-8"></div>
+            
+            <!-- Copyright -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-right">
+                <p class="text-gray-400 text-sm"> 2023 جميع الحقوق محفوظة لشركة نظم التظليل والهياكل المعدنية</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">سياسة الخصوصية</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">الشروط والأحكام</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">سياسة الإرجاع</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -308,6 +782,304 @@
 
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
+    <script>
+        // Hero Slider
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.hero-slider');
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('[data-slide]');
+            
+            let currentSlide = 0;
+            let slideInterval;
+            const slideDuration = 3000; // 3 seconds for faster auto-sliding
+            
+            // Initialize slider
+            function initSlider() {
+                // Show first slide
+                updateSlide(0);
+                // Start autoplay
+                startAutoSlide();
+                // Add event listeners
+                addEventListeners();
+            }
+            
+            // Update slide
+            function updateSlide(index) {
+                // Update current slide index
+                currentSlide = (index + slides.length) % slides.length;
+                
+                // Update slides
+                slides.forEach((slide, i) => {
+                    if (i === currentSlide) {
+                        slide.setAttribute('data-active', '');
+                        slide.style.opacity = '1';
+                    } else {
+                        slide.removeAttribute('data-active');
+                        slide.style.opacity = '0';
+                    }
+                });
+                
+                // Update dots
+                dots.forEach((dot, i) => {
+                    if (i === currentSlide) {
+                        dot.classList.add('active');
+                        dot.setAttribute('aria-current', 'true');
+                    } else {
+                        dot.classList.remove('active');
+                        dot.removeAttribute('aria-current');
+                    }
+                });
+            }
+            
+            // Next slide
+            function nextSlide() {
+                updateSlide(currentSlide + 1);
+                resetAutoSlide();
+            }
+            
+            // Previous slide
+            function prevSlide() {
+                updateSlide(currentSlide - 1);
+                resetAutoSlide();
+            }
+            
+            // Go to specific slide
+            function goToSlide(index) {
+                updateSlide(index);
+                resetAutoSlide();
+            }
+            
+            // Auto slide functionality
+            function startAutoSlide() {
+                stopAutoSlide();
+                slideInterval = setInterval(nextSlide, slideDuration);
+            }
+            
+            function stopAutoSlide() {
+                if (slideInterval) {
+                    clearInterval(slideInterval);
+                }
+            }
+            
+            function resetAutoSlide() {
+                stopAutoSlide();
+                startAutoSlide();
+            }
+            
+            // Add event listeners
+            function addEventListeners() {
+                // Navigation dots
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => goToSlide(index));
+                });
+                
+                // Pause auto-slide on dot hover
+                dots.forEach(dot => {
+                    dot.addEventListener('mouseenter', stopAutoSlide);
+                    dot.addEventListener('mouseleave', startAutoSlide);
+                });
+                
+                // Pause auto-slide on slider hover
+                if (slider) {
+                    slider.addEventListener('mouseenter', stopAutoSlide);
+                    slider.addEventListener('mouseleave', startAutoSlide);
+                }
+            }
+            
+            // Initialize the slider
+            initSlider();
+            
+            // Guest Slider
+            const guestSlider = document.querySelector('.guest-slider');
+            const guestSlidesContainer = document.querySelector('.guest-slides-container');
+            const guestSlides = document.querySelectorAll('.guest-slide');
+            const guestDots = document.querySelectorAll('.guest-dot');
+            const prevButton = document.querySelector('.guest-slider-prev');
+            const nextButton = document.querySelector('.guest-slider-next');
+            
+            let currentGuestSlide = 0;
+            let isAnimating = false;
+            let guestSlideInterval;
+            const guestSlideDuration = 5000; // 5 seconds
+            
+            // Initialize guest slider
+            function initGuestSlider() {
+                // Show first slide
+                updateGuestSlide(0, false);
+                // Start autoplay
+                startGuestAutoSlide();
+                // Add event listeners
+                addGuestEventListeners();
+            }
+            
+            // Update slide with smooth transition
+            function updateGuestSlide(index, animate = true) {
+                if (isAnimating) return;
+                isAnimating = true;
+                
+                // Update current slide index with loop
+                currentGuestSlide = (index + guestSlides.length) % guestSlides.length;
+                
+                // Remove active class from all slides
+                guestSlides.forEach(slide => {
+                    slide.classList.remove('active');
+                    slide.style.transition = 'none';
+                });
+                
+                // Add active class to current slide
+                const currentSlide = guestSlides[currentGuestSlide];
+                currentSlide.style.transition = animate ? 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
+                currentSlide.classList.add('active');
+                
+                // Update dots
+                updateDots();
+                
+                // Reset animation flag after transition
+                setTimeout(() => {
+                    isAnimating = false;
+                }, 700);
+            }
+            
+            // Update navigation dots
+            function updateDots() {
+                guestDots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentGuestSlide);
+                    dot.classList.toggle('bg-blue-600', i === currentGuestSlide);
+                    dot.classList.toggle('bg-gray-300', i !== currentGuestSlide);
+                });
+            }
+            
+            // Next slide with smooth transition
+            function nextGuestSlide() {
+                if (isAnimating) return;
+                updateGuestSlide(currentGuestSlide + 1);
+            }
+            
+            // Previous slide with smooth transition
+            function prevGuestSlide() {
+                if (isAnimating) return;
+                updateGuestSlide(currentGuestSlide - 1);
+            }
+            
+            // Go to specific slide
+            function goToGuestSlide(index) {
+                if (index === currentGuestSlide || isAnimating) return;
+                updateGuestSlide(index);
+                resetGuestAutoSlide();
+            }
+            
+            // Auto slide functionality
+            function startGuestAutoSlide() {
+                stopGuestAutoSlide();
+                guestSlideInterval = setInterval(() => {
+                    nextGuestSlide();
+                }, guestSlideDuration);
+            }
+            
+            function stopGuestAutoSlide() {
+                clearInterval(guestSlideInterval);
+            }
+            
+            function resetGuestAutoSlide() {
+                stopGuestAutoSlide();
+                startGuestAutoSlide();
+            }
+            
+            // Handle keyboard navigation
+            function handleKeyDown(e) {
+                if (e.key === 'ArrowRight') {
+                    prevGuestSlide();
+                    resetGuestAutoSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    nextGuestSlide();
+                    resetGuestAutoSlide();
+                }
+            }
+            
+            // Handle touch events for mobile swipe
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            function handleTouchStart(e) {
+                touchStartX = e.touches[0].clientX;
+                stopGuestAutoSlide();
+            }
+            
+            function handleTouchEnd(e) {
+                touchEndX = e.changedTouches[0].clientX;
+                handleSwipe();
+                startGuestAutoSlide();
+            }
+            
+            function handleSwipe() {
+                const swipeThreshold = 50; // Minimum distance to trigger slide change
+                const swipeDistance = touchStartX - touchEndX;
+                
+                if (Math.abs(swipeDistance) < swipeThreshold) return;
+                
+                if (swipeDistance > 0) {
+                    nextGuestSlide();
+                } else {
+                    prevGuestSlide();
+                }
+            }
+            
+            // Add event listeners
+            function addGuestEventListeners() {
+                // Navigation dots
+                guestDots.forEach((dot, index) => {
+                    dot.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        goToGuestSlide(index);
+                    });
+                });
+                
+                // Navigation arrows
+                prevButton?.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    prevGuestSlide();
+                    resetGuestAutoSlide();
+                });
+                
+                nextButton?.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    nextGuestSlide();
+                    resetGuestAutoSlide();
+                });
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', handleKeyDown);
+                
+                // Touch events for mobile
+                guestSlidesContainer?.addEventListener('touchstart', handleTouchStart, { passive: true });
+                guestSlidesContainer?.addEventListener('touchend', handleTouchEnd, { passive: true });
+                
+                // Pause auto-slide on hover
+                guestSlider?.addEventListener('mouseenter', stopGuestAutoSlide);
+                guestSlider?.addEventListener('mouseleave', startGuestAutoSlide);
+                
+                // Pause auto-slide when dots are hovered
+                guestDots.forEach(dot => {
+                    dot.addEventListener('mouseenter', stopGuestAutoSlide);
+                    dot.addEventListener('mouseleave', startGuestAutoSlide);
+                });
+                
+                // Handle window resize
+                let resizeTimer;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(() => {
+                        updateGuestSlide(currentGuestSlide, false);
+                    }, 250);
+                });
+            }
+            
+            // Initialize the guest slider when DOM is loaded
+            if (guestSlides.length > 0) {
+                initGuestSlider();
+            }
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Elements
@@ -474,8 +1246,10 @@
             
             // Pause auto-slide on hover
             const sliderContainer = document.querySelector('.partners-slider');
-            sliderContainer.addEventListener('mouseenter', stopAutoSlide);
-            sliderContainer.addEventListener('mouseleave', startAutoSlide);
+            if (sliderContainer) {
+                sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+                sliderContainer.addEventListener('mouseleave', startAutoSlide);
+            }
             
             // Handle window resize
             let resizeTimeout;
@@ -492,6 +1266,185 @@
             
             // Add loading class to body to prevent FOUC
             document.body.classList.add('js-loaded');
+        });
+        
+        // Initialize Partners Slider
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.getElementById('partners-slider');
+            const prevButton = document.getElementById('prev-partner');
+            const nextButton = document.getElementById('next-partner');
+            const dots = document.querySelectorAll('.dot');
+            
+            if (!slider || !prevButton || !nextButton) return;
+            
+            let currentIndex = 0;
+            let slideWidth = 0;
+            let slidesToShow = 0;
+            let totalSlides = document.querySelectorAll('.partner-logo').length;
+            let autoSlideInterval;
+            
+            // Initialize slider
+            function initSlider() {
+                updateSliderDimensions();
+                window.addEventListener('resize', updateSliderDimensions);
+                updateSlider();
+                startAutoSlide();
+                
+                // Pause auto-slide on hover
+                const partnersSection = document.querySelector('.partners-section');
+                if (partnersSection) {
+                    partnersSection.addEventListener('mouseenter', stopAutoSlide);
+                    partnersSection.addEventListener('mouseleave', startAutoSlide);
+                }
+                
+                // Touch events for mobile swipe
+                let touchStartX = 0;
+                let touchEndX = 0;
+                
+                slider.addEventListener('touchstart', e => {
+                    touchStartX = e.touches[0].clientX;
+                    stopAutoSlide();
+                }, { passive: true });
+                
+                slider.addEventListener('touchend', e => {
+                    touchEndX = e.changedTouches[0].clientX;
+                    handleSwipe();
+                    startAutoSlide();
+                }, { passive: true });
+                
+                function handleSwipe() {
+                    const diff = touchStartX - touchEndX;
+                    if (Math.abs(diff) > 50) { // Minimum swipe distance
+                        if (diff > 0) {
+                            nextSlide();
+                        } else {
+                            prevSlide();
+                        }
+                    }
+                }
+            }
+            
+            // Update slider dimensions based on viewport
+            function updateSliderDimensions() {
+                if (window.innerWidth >= 1024) {
+                    slidesToShow = 4;
+                } else if (window.innerWidth >= 768) {
+                    slidesToShow = 3;
+                } else {
+                    slidesToShow = 1;
+                }
+                
+                const container = slider.parentElement;
+                if (container) {
+                    slideWidth = container.offsetWidth / slidesToShow;
+                }
+                updateSlider();
+            }
+            
+            // Update slider position with smooth animation
+            function updateSlider() {
+                const offset = -currentIndex * (100 / slidesToShow);
+                slider.style.transform = `translateX(${offset}%)`;
+                
+                // Update dots
+                if (dots.length > 0) {
+                    dots.forEach((dot, index) => {
+                        if (index === currentIndex) {
+                            dot.classList.add('bg-blue-600', 'scale-125');
+                            dot.classList.remove('bg-gray-300');
+                        } else {
+                            dot.classList.remove('bg-blue-600', 'scale-125');
+                            dot.classList.add('bg-gray-300');
+                        }
+                    });
+                }
+                
+                // Disable buttons at boundaries
+                if (prevButton && nextButton) {
+                    prevButton.disabled = currentIndex === 0;
+                    nextButton.disabled = currentIndex >= Math.ceil(totalSlides / slidesToShow) - 1;
+                }
+            }
+            
+            // Navigation functions
+            function nextSlide() {
+                const maxIndex = Math.ceil(totalSlides / slidesToShow) - 1;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateSlider();
+                } else {
+                    // Reset to first slide if at the end
+                    currentIndex = 0;
+                    updateSlider();
+                }
+                resetAutoSlide();
+            }
+            
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider();
+                } else {
+                    // Go to last slide if at the beginning
+                    currentIndex = Math.ceil(totalSlides / slidesToShow) - 1;
+                    updateSlider();
+                }
+                resetAutoSlide();
+            }
+            
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSlider();
+                resetAutoSlide();
+            }
+            
+            // Auto-slide functionality
+            function startAutoSlide() {
+                stopAutoSlide();
+                autoSlideInterval = setInterval(() => {
+                    nextSlide();
+                }, 5000);
+            }
+            
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+            
+            function resetAutoSlide() {
+                stopAutoSlide();
+                startAutoSlide();
+            }
+            
+            // Event listeners
+            if (prevButton && nextButton) {
+                prevButton.addEventListener('click', () => {
+                    prevSlide();
+                });
+                
+                nextButton.addEventListener('click', () => {
+                    nextSlide();
+                });
+            }
+            
+            // Dot navigation
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const slideIndex = parseInt(dot.getAttribute('data-index'));
+                    goToSlide(slideIndex);
+                });
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            });
+            
+            // Initialize the slider
+            initSlider();
         });
     </script>
 </body>

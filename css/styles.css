@@ -1,5 +1,114 @@
 /* Custom styles for Shading Systems Website */
 
+/* Card Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatCard {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Card Styles */
+.card-animate {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    animation-delay: calc(var(--delay, 0) * 0.1s);
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Hero Section Styles */
+.hero-slide {
+    transition: opacity 1s ease-in-out, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-slide[data-active] {
+    opacity: 1 !important;
+    z-index: 1;
+}
+
+/* Hero Button Animations */
+.hero-cta {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.hero-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0d9488, #0f766e);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-cta:hover::before {
+    opacity: 1;
+}
+
+.hero-cta-outline {
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-cta-outline::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #fff, #99f6e4, #2dd4bf);
+    z-index: -2;
+    border-radius: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-cta-outline:hover::before {
+    opacity: 1;
+}
+
+/* Trust Badge Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.trust-badge {
+    animation: float 6s ease-in-out infinite;
+}
+
 /* Base Styles */
 :root {
   /* Light Theme */
@@ -159,6 +268,294 @@
 #partners-slider > div:hover img {
     filter: grayscale(0) opacity(1);
     transform: scale(1.05);
+}
+
+/* Hero Slider */
+.hero-slider {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.hero-slide {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero-slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-slide img {
+    transition: transform 0.5s ease-in-out;
+}
+
+.hero-slide:hover img {
+    transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom right,
+        rgba(30, 58, 138, 0.9) 0%,
+        rgba(30, 64, 175, 0.8) 50%,
+        rgba(30, 58, 138, 0.7) 100%
+    );
+    z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 0;
+}
+
+.hero-content h1 {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content p {
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.hero-buttons {
+    animation: fadeInUp 1s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Slider */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateZ(0);
+    will-change: transform;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-slider:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* Guest Slider */
+.guest-slider {
+    position: relative;
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guest-slider:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.guest-slides-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.75rem;
+}
+
+.guest-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    will-change: transform, opacity;
+}
+
+.guest-slide.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.guest-slide.active .guest-slide-img {
+    animation: zoomInOut 30s infinite alternate;
+}
+
+.guest-slide.active .guest-slide-content {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.4s;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Navigation Arrows */
+.guest-slider-prev,
+.guest-slider-next {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.8;
+}
+
+.guest-slider-prev:hover,
+.guest-slider-next:hover {
+    transform: translateY(-50%) scale(1.1) !important;
+    opacity: 1 !important;
+    background-color: white !important;
+}
+
+/* Dots Navigation */
+.guest-dots-container {
+    position: relative;
+    z-index: 10;
+    padding: 0.5rem 0;
+}
+
+.guest-dot {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+.guest-dot:hover,
+.guest-dot:focus {
+    transform: scale(1.2);
+    background-color: #2563eb;
+}
+
+.guest-dot.active {
+    width: 28px;
+    border-radius: 6px;
+    background-color: #2563eb;
+    transform: scale(1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .guest-slider-prev,
+    .guest-slider-next {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+    
+    .guest-slide-content {
+        padding: 1.5rem !important;
+    }
+    
+    .guest-slide h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .guest-slide p {
+        font-size: 0.875rem !important;
+    }
+}
+
+/* Dark Mode Support */
+.dark .guest-slider {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.dark .guest-dot {
+    background-color: #4b5563;
+}
+
+.dark .guest-dot.active {
+    background-color: #3b82f6;
+}
+
+/* Navigation Dots */
+[data-slide] {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0 4px;
+    border: 2px solid white;
+    background-color: transparent !important;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(0.8);
+    opacity: 0.7;
+}
+
+[data-slide]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+[data-slide]:hover {
+    transform: scale(1);
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+[data-slide].active {
+    transform: scale(1);
+    opacity: 1;
+    border-color: white;
+}
+
+[data-slide].active::before {
+    transform: translate(-50%, -50%) scale(1);
+    background: white;
 }
 
 /* Navigation buttons */

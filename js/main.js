@@ -4,69 +4,111 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Dark mode toggle
-    const themeToggleBtns = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle');
-    const html = document.documentElement;
-    
-    // Check for saved user preference, if any, on page load
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    if (savedTheme === 'dark') {
-        html.setAttribute('data-theme', 'dark');
-        updateThemeIcons('dark');
-    } else {
-        html.removeAttribute('data-theme');
-        updateThemeIcons('light');
-    }
-    
-    // Function to update theme icons
-    function updateThemeIcons(theme) {
-        const icons = document.querySelectorAll('#theme-toggle i, #mobile-theme-toggle i');
-        icons.forEach(icon => {
-            if (theme === 'dark') {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                // Update mobile button text if it exists
-                const mobileText = icon.parentElement.querySelector('span');
-                if (mobileText) {
-                    mobileText.textContent = 'الوضع النهاري';
-                }
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                // Update mobile button text if it exists
-                const mobileText = icon.parentElement.querySelector('span');
-                if (mobileText) {
-                    mobileText.textContent = 'الوضع الليلي';
-                }
-            }
-        });
-    }
-    
-    // Add click event listeners to all theme toggle buttons
-    themeToggleBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                html.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                updateThemeIcons('light');
-            } else {
-                html.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                updateThemeIcons('dark');
-            }
-        });
-    });
-
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menu-btn');
+    // Enhanced Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const closeMobileMenu = document.getElementById('close-mobile-menu');
     
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            menuBtn.querySelector('i').classList.toggle('fa-bars');
-            menuBtn.querySelector('i').classList.toggle('fa-times');
+    // Toggle mobile menu with animation
+    const toggleMobileMenu = (show) => {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        
+        if (show === undefined) {
+            show = !isExpanded;
+        }
+        
+        mobileMenuButton.setAttribute('aria-expanded', show);
+        
+        if (show) {
+            // Show menu with animation
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+            
+            // Trigger reflow
+            void mobileMenu.offsetHeight;
+            
+            mobileMenu.classList.remove('opacity-0', '-translate-y-2');
+            mobileMenu.classList.add('opacity-100', 'translate-y-0');
+            
+            // Add animation to menu items
+            const menuItems = mobileMenu.querySelectorAll('nav a, #mobile-theme-toggle');
+            menuItems.forEach((item, index) => {
+                item.style.transitionDelay = `${index * 50}ms`;
+                item.style.transform = 'translateX(1rem)';
+                item.style.opacity = '0';
+                
+                // Trigger reflow
+                void item.offsetWidth;
+                
+                item.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+                item.style.transform = 'translateX(0)';
+                item.style.opacity = '1';
+            });
+        } else {
+            // Hide menu with animation
+            mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+            mobileMenu.classList.add('opacity-0', '-translate-y-2');
+            document.body.style.overflow = ''; // Re-enable scrolling
+            
+            // Reset menu items animation
+            const menuItems = mobileMenu.querySelectorAll('nav a, #mobile-theme-toggle');
+            menuItems.forEach(item => {
+                item.style.transitionDelay = '';
+                item.style.transform = '';
+                item.style.opacity = '';
+                item.style.transition = '';
+            });
+            
+            // Wait for animation to complete before hiding
+            setTimeout(() => {
+                if (mobileMenuButton.getAttribute('aria-expanded') === 'false') {
+                    mobileMenu.classList.add('hidden');
+                }
+            }, 300);
+        }
+    };
+    
+    // Event listeners for mobile menu
+    if (mobileMenuButton && mobileMenu) {
+        // Toggle menu on button click
+        mobileMenuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileMenu();
+        });
+        
+        // Close menu when clicking the close button
+        if (closeMobileMenu) {
+            closeMobileMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMobileMenu(false);
+            });
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const isClickInsideMenu = mobileMenu.contains(e.target);
+            const isClickOnButton = mobileMenuButton.contains(e.target);
+            
+            if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu(false);
+            }
+        });
+        
+        // Close menu when clicking on a menu item (except theme toggle)
+        const mobileMenuItems = mobileMenu.querySelectorAll('a:not([id])');
+        mobileMenuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Small delay to allow for click animation
+                setTimeout(() => toggleMobileMenu(false), 100);
+            });
+        });
+        
+        // Handle keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu(false);
+                mobileMenuButton.focus();
+            }
         });
     }
 

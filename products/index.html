@@ -17,50 +17,202 @@
         body {
             font-family: 'Cairo', sans-serif;
         }
+        
+        /* Animation for product cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .product-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
+        
+        .product-badge {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .product-image {
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+            filter: brightness(1.05);
+        }
+        
+        .add-to-cart-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .add-to-cart-btn:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%, -50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .add-to-cart-btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-blue-800 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4 space-x-reverse">
-                    <a href="../index.html" class="text-2xl font-bold">شعار الشركة</a>
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100/50 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center space-x-2 space-x-reverse group">
+                        <div class="p-1.5 rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                            <img src="../images/logo.png" alt="شعار الشركة" class="h-7 w-auto">
+                        </div>
+                        <span class="text-xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+                            شادينج سيستمز
+                        </span>
+                    </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
-                    <a href="../index.html" class="hover:text-blue-200 transition">الرئيسية</a>
-                    <a href="#" class="text-blue-200 font-semibold">المنتجات</a>
-                    <a href="../services/" class="hover:text-blue-200 transition">الخدمات</a>
-                    <a href="../about/" class="hover:text-blue-200 transition">من نحن</a>
-                    <a href="../contact/" class="hover:text-blue-200 transition">اتصل بنا</a>
-                    <a href="../blog/" class="hover:text-blue-200 transition">المدونة</a>
-                    <button id="theme-toggle" class="text-blue-100 hover:text-white p-2 rounded-full focus:outline-none" aria-label="تبديل الوضع الليلي">
-                        <i class="fas fa-moon text-xl"></i>
-                    </button>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-2 md:space-x-reverse">
+                    <a href="../index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-home ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            الرئيسية
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="#" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-blue-600/10 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-boxes ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            المنتجات
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full"></span>
+                    </a>
+                    <a href="../services/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-tools ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            الخدمات
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="../about/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-info-circle ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            من نحن
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="../contact/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-envelope ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            اتصل بنا
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="../blog/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-newspaper ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            المدونة
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
                 </div>
                 
                 <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="menu-btn" class="text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2.5 rounded-xl text-gray-700 hover:bg-blue-50/50 transition-all duration-300 relative group" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">فتح القائمة الرئيسية</span>
+                        <div class="space-y-1.5 group-hover:space-y-0.5 transition-all duration-300">
+                            <span class="block w-5 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 transform group-hover:translate-y-1 group-hover:rotate-45"></span>
+                            <span class="block w-4 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 opacity-100 group-hover:opacity-0"></span>
+                            <span class="block w-5 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 transform group-hover:-translate-y-1 group-hover:-rotate-45"></span>
+                        </div>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </button>
                 </div>
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="../index.html" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الرئيسية</a>
-                <a href="index.html" class="block py-2 bg-blue-900 px-2 rounded transition-colors">المنتجات</a>
-                <a href="../services/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الخدمات</a>
-                <a href="../about/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">من نحن</a>
-                <a href="../contact/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">اتصل بنا</a>
-                <a href="../blog/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المدونة</a>
-                <button id="mobile-theme-toggle" class="w-full text-right py-2 px-2 rounded flex items-center justify-end hover:bg-blue-700 transition-colors">
-                    <span class="ml-2">الوضع الليلي</span>
-                    <i class="fas fa-moon"></i>
-                </button>
+            <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-100 overflow-hidden mt-2 mb-4">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="../index.html" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-home ml-3 w-5 text-center text-blue-600 opacity-70 group-hover:opacity-100 transition-opacity"></i>
+                        <span>الرئيسية</span>
+                    </a>
+                    <a href="index.html" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl bg-blue-50 text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-boxes ml-3 w-5 text-center text-blue-600 opacity-70 group-hover:opacity-100 transition-opacity"></i>
+                        <span>المنتجات</span>
+                        <span class="mr-auto flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                    </a>
+                    <a href="../services/" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-tools ml-3 w-5 text-center text-blue-600 opacity-70 group-hover:opacity-100 transition-opacity"></i>
+                        <span>الخدمات</span>
+                    </a>
+                    <a href="../about/" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-info-circle ml-3 w-5 text-center text-blue-600 opacity-70 group-hover:opacity-100 transition-opacity"></i>
+                        <span>من نحن</span>
+                    </a>
+                    <a href="../contact/" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-envelope ml-3 w-5 text-center text-blue-600 opacity-70 group-hover:opacity-100 transition-opacity"></i>
+                        <span>اتصل بنا</span>
+                    </a>
+                    <a href="../blog/" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-newspaper ml-3 w-5 text-center text-blue-600 opacity-70 group-hover:opacity-100 transition-opacity"></i>
+                        <span>المدونة</span>
+                    </a>
+
             </div>
         </div>
     </nav>
@@ -77,23 +229,28 @@
     <section class="py-16">
         <div class="container mx-auto px-4">
             <!-- Filter Buttons -->
-            <div class="flex flex-wrap justify-center mb-12 gap-4">
-                <button class="px-6 py-2 rounded-full bg-blue-700 text-white font-medium">الكل</button>
-                <button class="px-6 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition">مظلات قابلة للسحب</button>
-                <button class="px-6 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition">شبكات التظليل</button>
-                <button class="px-6 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition">برجولات معدنية</button>
-                <button class="px-6 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 transition">هياكل معدنية</button>
+            <div class="flex flex-wrap justify-center mb-12 gap-4" id="filter-buttons">
+                <button class="filter-btn px-6 py-2 rounded-full bg-blue-700 text-white font-medium hover:bg-blue-800 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95" data-filter="all">الكل</button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95" data-filter="retractable-awnings">مظلات قابلة للسحب</button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95" data-filter="shade-nets">شبكات التظليل</button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95" data-filter="pergolas">برجولات معدنية</button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100 hover:border-blue-300 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95" data-filter="metal-structures">هياكل معدنية</button>
             </div>
 
             <!-- Products -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Product 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                             alt="مظلات قابلة للسحب" 
-                             class="w-full h-64 object-cover">
-                        <span class="absolute top-4 left-4 bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">جديد</span>
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group" data-category="retractable-awnings">
+                    <div class="relative overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="مظلات قابلة للسحب" 
+                                 class="product-image w-full h-64 object-cover transform transition-transform duration-500">
+                        </div>
+                        <span class="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-medium px-3 py-1 rounded-full product-badge shadow-lg">
+                            جديد
+                            <span class="absolute inset-0 rounded-full bg-white opacity-20 animate-ping"></span>
+                        </span>
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
@@ -102,116 +259,255 @@
                         </div>
                         <p class="text-gray-600 mb-4">حل مثالي للمساحات الخارجية يمكن التحكم فيه بسهولة حسب الحاجة</p>
                         <div class="flex justify-between items-center">
-                            <a href="retractable-awnings.html" class="text-blue-600 hover:underline">عرض التفاصيل</a>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                <i class="fas fa-shopping-cart ml-1"></i> أضف للسلة
-                            </button>
+                            <div class="w-full mt-4">
+                                <a href="glass-structures.html" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+                                    <i class="fas fa-shopping-cart ml-2"></i>
+                                    أضف إلى السلة
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Product 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
-                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="شبكات التظليل" 
-                         class="w-full h-64 object-cover">
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group" data-category="shade-nets">
+                    <div class="relative overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="شبكات التظليل" 
+                                 class="product-image w-full h-64 object-cover transform transition-transform duration-500">
+                        </div>
+                        <span class="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-medium px-3 py-1 rounded-full product-badge shadow-lg">
+                            الأكثر مبيعاً
+                        </span>
+                    </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold">شبكات التظليل</h3>
-                            <span class="text-blue-600 font-bold">1,499 ريال</span>
+                            <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">شبكات التظليل</h3>
+                            <span class="text-blue-600 font-bold text-lg">1,499 ريال</span>
                         </div>
-                        <p class="text-gray-600 mb-4">حماية من أشعة الشمس مع توفير التهوية المناسبة للمساحات الخارجية</p>
+                        <p class="text-gray-600 mb-4 transition-colors duration-300 group-hover:text-gray-700">حماية من أشعة الشمس مع توفير التهوية المناسبة للمساحات الخارجية</p>
                         <div class="flex justify-between items-center">
-                            <a href="shade-nets.html" class="text-blue-600 hover:underline">عرض التفاصيل</a>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                <i class="fas fa-shopping-cart ml-1"></i> أضف للسلة
-                            </button>
+                            <div class="w-full mt-4">
+                                <a href="outdoor-blinds.html" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+                                    <i class="fas fa-shopping-cart ml-2"></i>
+                                    أضف إلى السلة
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
-                    <img src="https://images.unsplash.com/photo-1600566752225-4f5a9c3c3e38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="برجولات معدنية" 
-                         class="w-full h-64 object-cover">
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group" data-category="pergolas">
+                    <div class="relative overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600566752225-4f5a9c3c3e38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="برجولات معدنية" 
+                                 class="product-image w-full h-64 object-cover transform transition-transform duration-500">
+                        </div>
+                        <span class="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-medium px-3 py-1 rounded-full product-badge shadow-lg">
+                            عروض خاصة
+                        </span>
+                    </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold">برجولات معدنية</h3>
-                            <span class="text-blue-600 font-bold">4,999 ريال</span>
+                            <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">برجولات معدنية</h3>
+                            <div class="flex flex-col items-end">
+                                <span class="text-blue-600 font-bold text-lg">4,999 ريال</span>
+                                <span class="text-sm text-gray-400 line-through">5,799 ريال</span>
+                            </div>
                         </div>
-                        <p class="text-gray-600 mb-4">تصميمات عصرية تجمع بين الجمال والمتانة للمساحات الخارجية</p>
+                        <p class="text-gray-600 mb-4 transition-colors duration-300 group-hover:text-gray-700">تصميمات عصرية تجمع بين الجمال والمتانة للمساحات الخارجية</p>
                         <div class="flex justify-between items-center">
-                            <a href="pergolas.html" class="text-blue-600 hover:underline">عرض التفاصيل</a>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                <i class="fas fa-shopping-cart ml-1"></i> أضف للسلة
-                            </button>
+                            <div class="w-full mt-4">
+                                <a href="product-template.html" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+                                    <i class="fas fa-shopping-cart ml-2"></i>
+                                    أضف إلى السلة
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 4 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="هياكل معدنية" 
-                         class="w-full h-64 object-cover">
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group" data-category="metal-structures">
+                    <div class="relative overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="هياكل معدنية" 
+                                 class="product-image w-full h-64 object-cover transform transition-transform duration-500">
+                        </div>
+                        <span class="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-medium px-3 py-1 rounded-full product-badge shadow-lg">
+                            جديد
+                            <span class="absolute inset-0 rounded-full bg-white opacity-20 animate-ping"></span>
+                        </span>
+                    </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold">هياكل معدنية</h3>
-                            <span class="text-blue-600 font-bold">3,499 ريال</span>
+                            <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">هياكل معدنية</h3>
+                            <span class="text-blue-600 font-bold text-lg">3,499 ريال</span>
                         </div>
-                        <p class="text-gray-600 mb-4">تصاميم قوية ومتينة لمختلف الأغراض الصناعية والتجارية</p>
+                        <p class="text-gray-600 mb-4 transition-colors duration-300 group-hover:text-gray-700">تصاميم قوية ومتينة لمختلف الأغراض الصناعية والتجارية</p>
                         <div class="flex justify-between items-center">
-                            <a href="metal-structures.html" class="text-blue-600 hover:underline">عرض التفاصيل</a>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                <i class="fas fa-shopping-cart ml-1"></i> أضف للسلة
-                            </button>
+                            <div class="w-full mt-4">
+                                <a href="steel-fences.html" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+                                    <i class="fas fa-shopping-cart ml-2"></i>
+                                    أضف إلى السلة
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 5 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
-                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="ستائر خارجية" 
-                         class="w-full h-64 object-cover">
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group" data-category="outdoor-curtains">
+                    <div class="relative overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="ستائر خارجية" 
+                                 class="product-image w-full h-64 object-cover transform transition-transform duration-500">
+                        </div>
+                        <span class="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-medium px-3 py-1 rounded-full product-badge shadow-lg">
+                            الأكثر طلباً
+                        </span>
+                    </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold">ستائر خارجية</h3>
-                            <span class="text-blue-600 font-bold">2,199 ريال</span>
+                            <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">ستائر خارجية</h3>
+                            <span class="text-blue-600 font-bold text-lg">2,199 ريال</span>
                         </div>
-                        <p class="text-gray-600 mb-4">حل أنيق وعملي لحماية المساحات من أشعة الشمس والعيون</p>
+                        <p class="text-gray-600 mb-4 transition-colors duration-300 group-hover:text-gray-700">حل أنيق وعملي لحماية المساحات من أشعة الشمس والعيون</p>
                         <div class="flex justify-between items-center">
-                            <a href="outdoor-curtains.html" class="text-blue-600 hover:underline">عرض التفاصيل</a>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                <i class="fas fa-shopping-cart ml-1"></i> أضف للسلة
-                            </button>
+                            <div class="w-full mt-4">
+                                <a href="#" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+                                    <i class="fas fa-shopping-cart ml-2"></i>
+                                    أضف إلى السلة
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 6 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                             alt="مظلات سيارات" 
-                             class="w-full h-64 object-cover">
-                        <span class="absolute top-4 left-4 bg-red-600 text-white text-sm font-medium px-3 py-1 rounded-full">خصم 15%</span>
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group" data-category="car-ports">
+                    <div class="relative overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="مظلات سيارات" 
+                                 class="product-image w-full h-64 object-cover transform transition-transform duration-500">
+                        </div>
+                        <div class="absolute top-4 left-4 flex flex-col space-y-2">
+                            <span class="bg-gradient-to-r from-red-600 to-red-500 text-white text-sm font-medium px-3 py-1 rounded-full product-badge shadow-lg">
+                                خصم 15%
+                                <span class="absolute inset-0 rounded-full bg-white opacity-20 animate-pulse"></span>
+                            </span>
+                            <span class="bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-medium px-3 py-1 rounded-full product-badge shadow-lg">
+                                الأكثر مبيعاً
+                            </span>
+                        </div>
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold">مظلات سيارات</h3>
-                            <div class="text-right">
-                                <span class="text-gray-400 line-through text-sm block">3,999 ريال</span>
-                                <span class="text-blue-600 font-bold">3,399 ريال</span>
+                            <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">مظلات سيارات</h3>
+                            <div class="flex flex-col items-end">
+                                <span class="text-blue-600 font-bold text-lg">1,699 ريال</span>
+                                <span class="text-sm text-gray-400 line-through">1,999 ريال</span>
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-4">حماية سيارتك من أشعة الشمس والأتربة بمواد عالية الجودة</p>
+                        <p class="text-gray-600 mb-4 transition-colors duration-300 group-hover:text-gray-700">حماية للسيارات من أشعة الشمس والأمطار بجودة عالية</p>
                         <div class="flex justify-between items-center">
-                            <a href="car-ports.html" class="text-blue-600 hover:underline">عرض التفاصيل</a>
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                <i class="fas fa-shopping-cart ml-1"></i> أضف للسلة
-                            </button>
+                            <div class="w-full mt-4">
+                                <a href="#" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+                                    <i class="fas fa-shopping-cart ml-2"></i>
+                                    أضف إلى السلة
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 - Glass Canopy -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group" data-category="glass-structures">
+                    <div class="relative overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1583845112203-293299a4705a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="هياكل زجاجية" 
+                                 class="product-image w-full h-64 object-cover transform transition-transform duration-500">
+                        </div>
+                        <span class="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-medium px-3 py-1 rounded-full product-badge shadow-lg">
+                            تصميم فاخر
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">هياكل زجاجية</h3>
+                            <span class="text-blue-600 font-bold text-lg">4,999 ريال</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 transition-colors duration-300 group-hover:text-gray-700">تصميمات عصرية وأنيقة توفر الإضاءة الطبيعية مع الحماية من العوامل الجوية</p>
+                        <div class="flex justify-between items-center">
+                            <div class="w-full mt-4">
+                                <a href="#" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+                                    <i class="fas fa-shopping-cart ml-2"></i>
+                                    أضف إلى السلة
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 8 - Outdoor Blinds -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group" data-category="outdoor-blinds">
+                    <div class="relative overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="ستائر خارجية قابلة للطي" 
+                                 class="product-image w-full h-64 object-cover transform transition-transform duration-500">
+                        </div>
+                        <span class="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-medium px-3 py-1 rounded-full product-badge shadow-lg">
+                            عازل حراري
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">ستائر خارجية قابلة للطي</h3>
+                            <span class="text-blue-600 font-bold text-lg">2,299 ريال</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 transition-colors duration-300 group-hover:text-gray-700">حل عميل يوفر الخصوصية والحماية من أشعة الشمس مع إمكانية التحكم في كمية الضوء</p>
+                        <div class="flex justify-between items-center">
+                            <div class="w-full mt-4">
+                                <a href="#" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+                                    <i class="fas fa-shopping-cart ml-2"></i>
+                                    أضف إلى السلة
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9 - Steel Fences -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group" data-category="metal-structures">
+                    <div class="relative overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1615315555418-fe31a4b19cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="أسوار معدنية" 
+                                 class="product-image w-full h-64 object-cover transform transition-transform duration-500">
+                        </div>
+                        <span class="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-medium px-3 py-1 rounded-full product-badge shadow-lg">
+                            أمان عالي
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">أسوار معدنية</h3>
+                            <span class="text-blue-600 font-bold text-lg">3,499 ريال</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 transition-colors duration-300 group-hover:text-gray-700">تصميمات قوية وأنيقة توفر الخصوصية والأمان للمساحات الخارجية</p>
+                        <div class="flex justify-between items-center">
+                            <div class="w-full mt-4">
+                                <a href="#" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+                                    <i class="fas fa-shopping-cart ml-2"></i>
+                                    أضف إلى السلة
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -219,31 +515,107 @@
 
             <!-- Pagination -->
             <div class="flex justify-center mt-12">
-                <nav class="flex items-center space-x-2 space-x-reverse">
-                    <a href="#" class="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 hover:bg-gray-50">
+                <nav class="flex items-center space-x-2 space-x-reverse" id="pagination">
+                    <button id="prev-page" class="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200" disabled>
                         <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="#" class="px-4 py-2 border border-blue-500 rounded-md bg-blue-50 text-blue-600 font-medium">1</a>
-                    <a href="#" class="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 hover:bg-gray-50">2</a>
-                    <a href="#" class="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 hover:bg-gray-50">3</a>
-                    <span class="px-2 text-gray-500">...</span>
-                    <a href="#" class="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 hover:bg-gray-50">
+                    </button>
+                    <div class="flex space-x-1 space-x-reverse" id="page-numbers">
+                        <!-- Page numbers will be inserted here by JavaScript -->
+                    </div>
+                    <button id="next-page" class="px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200">
                         <i class="fas fa-chevron-left"></i>
-                    </a>
+                    </button>
                 </nav>
             </div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const itemsPerPage = 6; // Number of products per page
+                    const products = document.querySelectorAll('.product-card');
+                    const totalPages = Math.ceil(products.length / itemsPerPage);
+                    let currentPage = 1;
+                    
+                    const pageNumbers = document.getElementById('page-numbers');
+                    const prevButton = document.getElementById('prev-page');
+                    const nextButton = document.getElementById('next-page');
+                    
+                    // Generate page numbers
+                    function setupPagination() {
+                        pageNumbers.innerHTML = '';
+                        
+                        // Always show first page
+                        addPageNumber(1);
+                        
+                        // Add ellipsis if needed
+                        if (currentPage > 3) {
+                            const ellipsis = document.createElement('span');
+                            ellipsis.className = 'px-2 text-gray-500';
+                            ellipsis.textContent = '...';
+                            pageNumbers.appendChild(ellipsis);
+                        }
+                        
+                        // Add page numbers around current page
+                        for (let i = Math.max(2, currentPage - 1); i <= Math.min(totalPages - 1, currentPage + 1); i++) {
+                            addPageNumber(i);
+                        }
+                        
+                        // Add ellipsis if needed
+                        if (currentPage < totalPages - 2) {
+                            const ellipsis = document.createElement('span');
+                            ellipsis.className = 'px-2 text-gray-500';
+                            ellipsis.textContent = '...';
+                            pageNumbers.appendChild(ellipsis);
+                        }
+                        
+                        // Always show last page if there's more than one page
+                        if (totalPages > 1) {
+                            addPageNumber(totalPages);
+                        }
+                        
+                        // Update button states
+                        prevButton.disabled = currentPage === 1;
+                        nextButton.disabled = currentPage === totalPages;
+                    }
+                    
+                    function addPageNumber(pageNum) {
+                        const pageLink = document.createElement('button');
+                        pageLink.className = `px-4 py-2 border rounded-md font-medium transition-all duration-200 ${currentPage === pageNum ? 'bg-blue-50 border-blue-500 text-blue-600' : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'}`;
+                        pageLink.textContent = pageNum;
+                        pageLink.addEventListener('click', () => goToPage(pageNum));
+                        pageNumbers.appendChild(pageLink);
+                    }
+                    
+                    function goToPage(pageNum) {
+                        if (pageNum < 1 || pageNum > totalPages) return;
+                        
+                        currentPage = pageNum;
+                        const start = (pageNum - 1) * itemsPerPage;
+                        const end = start + itemsPerPage;
+                        
+                        // Hide all products
+                        products.forEach((product, index) => {
+                            if (index >= start && index < end) {
+                                product.style.display = 'block';
+                                product.style.animation = 'fadeInUp 0.5s ease-out forwards';
+                            } else {
+                                product.style.display = 'none';
+                            }
+                        });
+                        
+                        setupPagination();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                    
+                    // Event listeners
+                    prevButton.addEventListener('click', () => goToPage(currentPage - 1));
+                    nextButton.addEventListener('click', () => goToPage(currentPage + 1));
+                    
+                    // Initialize pagination
+                    goToPage(1);
+                });
+            </script>
         </div>
     </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-blue-700 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">هل تحتاج إلى استشارة مجانية؟</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">فريقنا من الخبراء جاهز لمساعدتك في اختيار المنتج المناسب لاحتياجاتك</p>
-            <a href="../contact/" class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">اتصل بنا الآن</a>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-12 pb-6">
         <div class="container mx-auto px-4">
@@ -310,5 +682,63 @@
 
     <!-- Main JavaScript -->
     <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            // Add click event to each filter button
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    // Update active state of buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-blue-700', 'text-white', 'border-blue-700');
+                        btn.classList.add('bg-white', 'text-gray-700', 'border-gray-300');
+                    });
+                    
+                    button.classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
+                    button.classList.add('bg-blue-700', 'text-white', 'border-blue-700');
+                    
+                    // Filter products
+                    productCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        
+                        if (filterValue === 'all' || category === filterValue) {
+                            card.style.display = 'block';
+                            // Add animation class
+                            card.style.animation = 'fadeInUp 0.5s ease-out forwards';
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            
+                            // Reset animation for the next time it's shown
+                            setTimeout(() => {
+                                card.style.animation = '';
+                                card.style.opacity = '1';
+                                card.style.transform = '';
+                            }, 500);
+                        } else {
+                            // Hide with fade out effect
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(10px)';
+                            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                            
+                            // Remove from layout after animation
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Initialize with 'All' filter active
+            const allButton = document.querySelector('[data-filter="all"]');
+            if (allButton) {
+                allButton.click();
+            }
+        });
+    </script>
 </body>
 </html>

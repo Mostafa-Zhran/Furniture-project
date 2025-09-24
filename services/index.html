@@ -28,46 +28,119 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-blue-800 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4 space-x-reverse">
-                    <a href="../index.html" class="text-2xl font-bold">شعار الشركة</a>
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100/50 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center space-x-2 space-x-reverse group">
+                        <div class="p-1.5 rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                            <img src="../images/logo.png" alt="شعار الشركة" class="h-7 w-auto">
+                        </div>
+                        <span class="text-xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+                            شادينج سيستمز
+                        </span>
+                    </a>
                 </div>
-                
+
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
-                    <a href="../index.html" class="hover:text-blue-200 transition">الرئيسية</a>
-                    <a href="../products/" class="hover:text-blue-200 transition">المنتجات</a>
-                    <a href="#" class="text-blue-200 font-semibold">الخدمات</a>
-                    <a href="../about/" class="hover:text-blue-200 transition">من نحن</a>
-                    <a href="../contact/" class="hover:text-blue-200 transition">اتصل بنا</a>
-                    <a href="../blog/" class="hover:text-blue-200 transition">المدونة</a>
-                    <button id="theme-toggle" class="text-blue-100 hover:text-white p-2 rounded-full focus:outline-none" aria-label="تبديل الوضع الليلي">
-                        <i class="fas fa-moon text-xl"></i>
-                    </button>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-2 md:space-x-reverse">
+                    <a href="../index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-home ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            الرئيسية
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="../products/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-boxes ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            المنتجات
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="#" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-blue-50 text-blue-700 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-tools ml-1.5 text-blue-600"></i>
+                            الخدمات
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full"></span>
+                    </a>
+                    <a href="../about/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-info-circle ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            من نحن
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="../contact/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-envelope ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            اتصل بنا
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="../blog/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-newspaper ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            المدونة
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
                 </div>
-                
+
                 <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="menu-btn" class="text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2.5 rounded-xl text-gray-700 hover:bg-blue-50/50 transition-all duration-300 relative group" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">فتح القائمة الرئيسية</span>
+                        <div class="space-y-1.5 group-hover:space-y-0.5 transition-all duration-300">
+                            <span class="block w-5 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 transform group-hover:translate-y-1 group-hover:rotate-45"></span>
+                            <span class="block w-4 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 opacity-100 group-hover:opacity-0"></span>
+                            <span class="block w-5 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 transform group-hover:-translate-y-1 group-hover:-rotate-45"></span>
+                        </div>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </button>
                 </div>
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="../index.html" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الرئيسية</a>
-                <a href="../products/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المنتجات</a>
-                <a href="#" class="block py-2 bg-blue-900 px-2 rounded transition-colors">الخدمات</a>
-                <a href="../about/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">من نحن</a>
-                <a href="../contact/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">اتصل بنا</a>
-                <a href="../blog/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المدونة</a>
-                <button id="mobile-theme-toggle" class="w-full text-right py-2 px-2 rounded flex items-center justify-end hover:bg-blue-700 transition-colors">
-                    <span class="ml-2">الوضع الليلي</span>
-                    <i class="fas fa-moon"></i>
-                </button>
+            <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-100 overflow-hidden mt-2 mb-4">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="../index.html" class="flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg group">
+                        <i class="fas fa-home ml-2 text-blue-500 w-5 text-center"></i>
+                        الرئيسية
+                    </a>
+                    <a href="../products/" class="flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg group">
+                        <i class="fas fa-boxes ml-2 text-blue-500 w-5 text-center"></i>
+                        المنتجات
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-3 text-base font-medium text-blue-700 bg-blue-50 rounded-lg group">
+                        <i class="fas fa-tools ml-2 text-blue-600 w-5 text-center"></i>
+                        الخدمات
+                    </a>
+                    <a href="../about/" class="flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg group">
+                        <i class="fas fa-info-circle ml-2 text-blue-500 w-5 text-center"></i>
+                        من نحن
+                    </a>
+                    <a href="../contact/" class="flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg group">
+                        <i class="fas fa-envelope ml-2 text-blue-500 w-5 text-center"></i>
+                        اتصل بنا
+                    </a>
+                    <a href="../blog/" class="flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg group">
+                        <i class="fas fa-newspaper ml-2 text-blue-500 w-5 text-center"></i>
+                        المدونة
+                    </a>
+                    <button id="mobile-theme-toggle" class="w-full text-right px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg flex items-center justify-end group">
+                        <span class="ml-2">الوضع الليلي</span>
+                        <i class="fas fa-moon text-blue-500"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -96,7 +169,6 @@
                     </div>
                     <h3 class="text-xl font-semibold mb-3">الدراسات والاستشارات</h3>
                     <p class="text-gray-600 mb-6">نقدم دراسات متكاملة واستشارات هندسية متخصصة لضمان اختيار الحلول الأمثل لمشاريع التظليل والهياكل المعدنية</p>
-                    <a href="consultation/" class="text-blue-600 font-medium hover:underline">المزيد من التفاصيل <i class="fas fa-arrow-left mr-1"></i></a>
                 </div>
 
                 <!-- Service 2 -->
@@ -106,7 +178,6 @@
                     </div>
                     <h3 class="text-xl font-semibold mb-3">التصميم والتنفيذ</h3>
                     <p class="text-gray-600 mb-6">تصميم مبتكر وتنفيذ دقيق لأنظمة التظليل والهياكل المعدنية وفقاً لأعلى المعايير الفنية والجودة</p>
-                    <a href="design/" class="text-blue-600 font-medium hover:underline">المزيد من التفاصيل <i class="fas fa-arrow-left mr-1"></i></a>
                 </div>
 
                 <!-- Service 3 -->
@@ -116,7 +187,6 @@
                     </div>
                     <h3 class="text-xl font-semibold mb-3">التركيب والتشغيل</h3>
                     <p class="text-gray-600 mb-6">فريق فني متخصص لتركيب أنظمة التظليل والهياكل المعدنية باحترافية عالية وضمان التشغيل الأمثل</p>
-                    <a href="installation/" class="text-blue-600 font-medium hover:underline">المزيد من التفاصيل <i class="fas fa-arrow-left mr-1"></i></a>
                 </div>
 
                 <!-- Service 4 -->
@@ -126,7 +196,6 @@
                     </div>
                     <h3 class="text-xl font-semibold mb-3">الصيانة والدعم الفني</h3>
                     <p class="text-gray-600 mb-6">خدمات صيانة دورية وطارئة مع توفير قطع الغيار الأصلية لضمان استمرارية الأداء الأمثل</p>
-                    <a href="maintenance/" class="text-blue-600 font-medium hover:underline">المزيد من التفاصيل <i class="fas fa-arrow-left mr-1"></i></a>
                 </div>
 
                 <!-- Service 5 -->
@@ -136,7 +205,6 @@
                     </div>
                     <h3 class="text-xl font-semibold mb-3">التشطيبات والتجهيزات</h3>
                     <p class="text-gray-600 mb-6">تشطيبات عالية الجودة وإضافات تحسينية تتناسب مع ذوقك وتكمل المظهر الجمالي للمشروع</p>
-                    <a href="finishing/" class="text-blue-600 font-medium hover:underline">المزيد من التفاصيل <i class="fas fa-arrow-left mr-1"></i></a>
                 </div>
 
                 <!-- Service 6 -->
@@ -146,7 +214,6 @@
                     </div>
                     <h3 class="text-xl font-semibold mb-3">خدمة ما بعد البيع</h3>
                     <p class="text-gray-600 mb-6">دعم فني متكامل وخدمة عملاء على مدار الساعة لضمان رضاك التام عن منتجاتنا وخدماتنا</p>
-                    <a href="after-sales/" class="text-blue-600 font-medium hover:underline">المزيد من التفاصيل <i class="fas fa-arrow-left mr-1"></i></a>
                 </div>
             </div>
         </div>
