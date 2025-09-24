@@ -14,64 +14,199 @@
     <!-- Google Fonts - Cairo -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+        
         body {
             font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
         }
-        .contact-info-card {
-            transition: all 0.3s ease;
+        
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .contact-info-card:hover {
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Animation Classes */
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .animate-delay-100 { animation-delay: 0.1s; }
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-300 { animation-delay: 0.3s; }
+        .animate-delay-400 { animation-delay: 0.4s; }
+        
+        .hover-float {
+            transition: transform 0.3s ease;
+        }
+        .hover-float:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Form Styling */
+        input, textarea, select {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
         input:focus, textarea:focus, select:focus {
             outline: none;
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        
+        /* Button Hover Effect */
+        .btn-hover-effect {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-hover-effect:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn-hover-effect:hover:after {
+            transform: scaleX(1);
+            transform-origin: left;
         }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-blue-800 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4 space-x-reverse">
-                    <a href="../index.html" class="text-2xl font-bold">شعار الشركة</a>
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100/50 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center space-x-2 space-x-reverse group">
+                        <div class="p-1.5 rounded-lg bg-gradient-to-br from-blue-600 to-blue-400 shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                            <img src="../images/logo.png" alt="شعار الشركة" class="h-7 w-auto">
+                        </div>
+                        <span class="text-xl font-extrabold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+                            شادينج سيستمز
+                        </span>
+                    </a>
                 </div>
-                
+
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
-                    <a href="../index.html" class="hover:text-blue-200 transition">الرئيسية</a>
-                    <a href="../products/" class="hover:text-blue-200 transition">المنتجات</a>
-                    <a href="../services/" class="hover:text-blue-200 transition">الخدمات</a>
-                    <a href="../about/" class="hover:text-blue-200 transition">من نحن</a>
-                    <a href="#" class="text-blue-200 font-semibold">اتصل بنا</a>
-                    <a href="../blog/" class="hover:text-blue-200 transition">المدونة</a>
-                    <button id="theme-toggle" class="text-blue-100 hover:text-white p-2 rounded-full focus:outline-none" aria-label="تبديل الوضع الليلي">
-                        <i class="fas fa-moon text-xl"></i>
-                    </button>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-2 md:space-x-reverse">
+                    <a href="../index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-home ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            الرئيسية
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="../products/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-boxes ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            المنتجات
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="../services/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-tools ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            الخدمات
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="../about/" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-blue-50/50 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-info-circle ml-1.5 text-blue-600 transition-opacity duration-300"></i>
+                            من نحن
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full transition-all duration-300 group-hover:w-3/4"></span>
+                    </a>
+                    <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-blue-50 text-blue-700 transition-all duration-300 relative group">
+                        <span class="relative z-10 flex items-center">
+                            <i class="fas fa-envelope ml-1.5 text-blue-600"></i>
+                            اتصل بنا
+                        </span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl"></span>
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full"></span>
+                    </a>
                 </div>
-                
+
                 <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="menu-btn" class="text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2.5 rounded-xl text-gray-700 hover:bg-blue-50/50 transition-all duration-300 relative group" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">فتح القائمة الرئيسية</span>
+                        <div class="space-y-1.5 group-hover:space-y-0.5 transition-all duration-300">
+                            <span class="block w-5 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 transform group-hover:translate-y-1 group-hover:rotate-45"></span>
+                            <span class="block w-4 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 opacity-100 group-hover:opacity-0"></span>
+                            <span class="block w-5 h-0.5 bg-gray-700 transition-all duration-300 group-hover:bg-blue-600 transform group-hover:-translate-y-1 group-hover:-rotate-45"></span>
+                        </div>
+                        <span class="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </button>
                 </div>
             </div>
             
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="../index.html" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الرئيسية</a>
-                <a href="../products/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المنتجات</a>
-                <a href="../services/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الخدمات</a>
-                <a href="../about/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">من نحن</a>
-                <a href="index.html" class="block py-2 bg-blue-900 px-2 rounded transition-colors">اتصل بنا</a>
-                <a href="../blog/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المدونة</a>
-                <button id="mobile-theme-toggle" class="w-full text-right py-2 px-2 rounded flex items-center justify-end hover:bg-blue-700 transition-colors">
-                    <span class="ml-2">الوضع الليلي</span>
-                    <i class="fas fa-moon"></i>
-                </button>
+            <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-100 overflow-hidden mt-2 mb-4">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="../index.html" class="group flex items-center px-4 py-3 text-base font-medium rounded-xl text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200">
+                        <i class="fas fa-home ml-2 text-blue-500 w-5 text-center"></i>
+                        الرئيسية
+                    </a>
+                    <a href="../products/" class="group flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">
+                        <i class="fas fa-boxes ml-2 text-blue-500 w-5 text-center"></i>
+                        المنتجات
+                    </a>
+                    <a href="../services/" class="group flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">
+                        <i class="fas fa-tools ml-2 text-blue-500 w-5 text-center"></i>
+                        الخدمات
+                    </a>
+                    <a href="../about/" class="group flex items-center px-4 py-3 text-base font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg">
+                        <i class="fas fa-info-circle ml-2 text-blue-500 w-5 text-center"></i>
+                        من نحن
+                    </a>
+                    <a href="index.html" class="group flex items-center px-4 py-3 text-base font-medium bg-blue-50 text-blue-700 rounded-lg">
+                        <i class="fas fa-envelope ml-2 text-blue-500 w-5 text-center"></i>
+                        اتصل بنا
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -87,44 +222,83 @@
     <!-- Contact Section -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <!-- Contact Info 1 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md contact-info-card">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 mx-auto">
-                        <i class="fas fa-map-marker-alt text-2xl"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Contact Info 1 - Address -->
+                <div class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-4 mx-auto transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                            <i class="fas fa-map-marker-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3 text-gray-800 group-hover:text-blue-700 transition-colors duration-300">العنوان</h3>
+                        <p class="text-gray-600 text-center leading-relaxed">
+                            الرياض، المملكة العربية السعودية<br>
+                            ص.ب: 12345
+                        </p>
                     </div>
-                    <h3 class="text-xl font-semibold text-center mb-2">العنوان</h3>
-                    <p class="text-gray-600 text-center">الرياض، المملكة العربية السعودية<br>ص.ب: 12345</p>
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 </div>
                 
-                <!-- Contact Info 2 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md contact-info-card">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 mx-auto">
-                        <i class="fas fa-phone-alt text-2xl"></i>
+                <!-- Contact Info 2 - Phone -->
+                <div class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 mb-4 mx-auto transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                            <i class="fas fa-phone-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3 text-gray-800 group-hover:text-green-700 transition-colors duration-300">هاتف</h3>
+                        <div class="space-y-1">
+                            <a href="tel:+966501234567" class="block text-center text-gray-600 hover:text-green-600 transition-colors duration-300 group-hover:translate-x-1 group-hover:font-medium">
+                                <i class="fas fa-mobile-alt ml-1 text-green-500"></i> +966 50 123 4567
+                            </a>
+                            <a href="tel:+966112345678" class="block text-center text-gray-600 hover:text-green-600 transition-colors duration-300 group-hover:translate-x-1 group-hover:font-medium">
+                                <i class="fas fa-phone ml-1 text-green-500"></i> +966 11 234 5678
+                            </a>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-center mb-2">هاتف</h3>
-                    <p class="text-gray-600 text-center">
-                        <a href="tel:+966501234567" class="hover:text-blue-600 transition">+966 50 123 4567</a><br>
-                        <a href="tel:+966112345678" class="hover:text-blue-600 transition">+966 11 234 5678</a>
-                    </p>
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-green-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 </div>
                 
-                <!-- Contact Info 3 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md contact-info-card">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 mx-auto">
-                        <i class="fas fa-envelope text-2xl"></i>
+                <!-- Contact Info 3 - Email -->
+                <div class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 mb-4 mx-auto transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3 text-gray-800 group-hover:text-purple-700 transition-colors duration-300">البريد الإلكتروني</h3>
+                        <div class="space-y-1">
+                            <a href="mailto:info@shadingsystems.com" class="block text-center text-gray-600 hover:text-purple-600 transition-colors duration-300 group-hover:translate-x-1 group-hover:font-medium">
+                                <i class="far fa-envelope ml-1 text-purple-500"></i> info@shadingsystems.com
+                            </a>
+                            <a href="mailto:support@shadingsystems.com" class="block text-center text-gray-600 hover:text-purple-600 transition-colors duration-300 group-hover:translate-x-1 group-hover:font-medium">
+                                <i class="fas fa-headset ml-1 text-purple-500"></i> support@shadingsystems.com
+                            </a>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-center mb-2">البريد الإلكتروني</h3>
-                    <p class="text-gray-600 text-center">
-                        <a href="mailto:info@shadingsystems.com" class="hover:text-blue-600 transition">info@shadingsystems.com</a><br>
-                        <a href="mailto:support@shadingsystems.com" class="hover:text-blue-600 transition">support@shadingsystems.com</a>
-                    </p>
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                </div>
+                
+                <!-- Contact Info 4 - WhatsApp -->
+                <div class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 mb-4 mx-auto transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                            <i class="fab fa-whatsapp text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3 text-gray-800 group-hover:text-green-700 transition-colors duration-300">واتساب</h3>
+                        <p class="text-gray-600 text-center mb-3">تواصل معنا مباشرة عبر واتساب</p>
+                        <a href="https://wa.me/966501234567" target="_blank" class="block w-full py-2 px-4 bg-green-500 hover:bg-green-600 text-white text-center rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                            <i class="fab fa-whatsapp ml-1"></i> ابدأ المحادثة
+                        </a>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 </div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Contact Form -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform transition-all duration-500 hover:shadow-xl">
                     <h2 class="text-2xl font-bold mb-6">أرسل لنا رسالة</h2>
                     <form id="contact-form" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
@@ -171,14 +345,18 @@
                             </label>
                         </div>
                         <button type="submit" 
-                            class="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition duration-300 font-medium">
-                            إرسال الرسالة
+                            class="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-3 px-6 rounded-lg hover:from-blue-700 hover:to-blue-600 transition-all duration-300 font-medium btn-hover-effect overflow-hidden relative group">
+                            <span class="relative z-10 flex items-center justify-center">
+                                <i class="far fa-paper-plane ml-2"></i>
+                                إرسال الرسالة
+                            </span>
+                            <span class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                         </button>
                     </form>
                 </div>
                 
                 <!-- Map -->
-                <div class="bg-gray-100 rounded-lg overflow-hidden">
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden transform transition-all duration-500 hover:shadow-xl">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.857737783657!2d46.71391131500115!3d24.81095398407743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efc7f9d9f12c9%3A0x9d5b5e5e5e5e5e5e5!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" 
                         width="100%" 
