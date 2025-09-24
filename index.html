@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نظم التظليل والهياكل المعدنية | الصفحة الرئيسية</title>
     <meta name="description" content="شركة متخصصة في تصميم وتصنيع وتركيب أنظمة التظليل والهياكل المعدنية عالية الجودة. نوفر حلولاً مبتكرة تناسب احتياجاتك.">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -34,6 +36,9 @@
                     <a href="about/" class="hover:text-blue-200 transition">من نحن</a>
                     <a href="contact/" class="hover:text-blue-200 transition">اتصل بنا</a>
                     <a href="blog/" class="hover:text-blue-200 transition">المدونة</a>
+                    <button id="theme-toggle" class="text-blue-100 hover:text-white p-2 rounded-full focus:outline-none" aria-label="تبديل الوضع الليلي">
+                        <i class="fas fa-moon text-xl"></i>
+                    </button>
                 </div>
                 
                 <!-- Mobile menu button -->
@@ -46,12 +51,16 @@
             
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="index.html" class="block py-2 hover:bg-blue-700 px-2 rounded">الرئيسية</a>
-                <a href="products/" class="block py-2 hover:bg-blue-700 px-2 rounded">المنتجات</a>
-                <a href="services/" class="block py-2 hover:bg-blue-700 px-2 rounded">الخدمات</a>
-                <a href="about/" class="block py-2 hover:bg-blue-700 px-2 rounded">من نحن</a>
-                <a href="contact/" class="block py-2 hover:bg-blue-700 px-2 rounded">اتصل بنا</a>
-                <a href="blog/" class="block py-2 hover:bg-blue-700 px-2 rounded">المدونة</a>
+                <a href="index.html" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الرئيسية</a>
+                <a href="products/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المنتجات</a>
+                <a href="services/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الخدمات</a>
+                <a href="about/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">من نحن</a>
+                <a href="contact/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">اتصل بنا</a>
+                <a href="blog/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المدونة</a>
+                <button id="mobile-theme-toggle" class="w-full text-right py-2 px-2 rounded flex items-center justify-end hover:bg-blue-700 transition-colors">
+                    <span class="ml-2">الوضع الليلي</span>
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -139,6 +148,91 @@
         </div>
     </section>
 
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="partners-container">
+            <div class="partners-header">
+                <h2>شركاؤنا</h2>
+                <p>نفتخر بشراكتنا مع أبرز العلامات التجارية الرائدة في مجالنا</p>
+            </div>
+            
+            <div class="partners-slider">
+                <button id="prev-partner" class="slider-nav" aria-label="الشريط السابق">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="overflow-hidden">
+                    <div id="partners-slider" class="flex">
+                        <!-- Partner 1 -->
+                        <div class="px-2">
+                            <div class="partner-logo">
+                                <a href="#" class="block w-full h-full flex items-center justify-center" target="_blank" rel="noopener noreferrer">
+                                    <img src="https://via.placeholder.com/200x80?text=شريك+1" alt="شريك 1">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Partner 2 -->
+                        <div class="px-2">
+                            <div class="partner-logo">
+                                <a href="#" class="block w-full h-full flex items-center justify-center" target="_blank" rel="noopener noreferrer">
+                                    <img src="https://via.placeholder.com/200x80?text=شريك+2" alt="شريك 2">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Partner 3 -->
+                        <div class="px-2">
+                            <div class="partner-logo">
+                                <a href="#" class="block w-full h-full flex items-center justify-center" target="_blank" rel="noopener noreferrer">
+                                    <img src="https://via.placeholder.com/200x80?text=شريك+3" alt="شريك 3">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Partner 4 -->
+                        <div class="px-2">
+                            <div class="partner-logo">
+                                <a href="#" class="block w-full h-full flex items-center justify-center" target="_blank" rel="noopener noreferrer">
+                                    <img src="https://via.placeholder.com/200x80?text=شريك+4" alt="شريك 4">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Partner 5 -->
+                        <div class="px-2">
+                            <div class="partner-logo">
+                                <a href="#" class="block w-full h-full flex items-center justify-center" target="_blank" rel="noopener noreferrer">
+                                    <img src="https://via.placeholder.com/200x80?text=شريك+5" alt="شريك 5">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Partner 6 -->
+                        <div class="px-2">
+                            <div class="partner-logo">
+                                <a href="#" class="block w-full h-full flex items-center justify-center" target="_blank" rel="noopener noreferrer">
+                                    <img src="https://via.placeholder.com/200x80?text=شريك+6" alt="شريك 6">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="next-partner" class="slider-nav" aria-label="الشريط التالي">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <!-- Dots Navigation -->
+                <div class="dots-container">
+                    <button class="dot active" data-index="0" aria-label="انتقل إلى الشريحة 1"></button>
+                    <button class="dot" data-index="1" aria-label="انتقل إلى الشريحة 2"></button>
+                    <button class="dot" data-index="2" aria-label="انتقل إلى الشريحة 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-16 bg-blue-700 text-white">
         <div class="container mx-auto px-4 text-center">
@@ -212,32 +306,192 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- JavaScript -->
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
     <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Back to top button
-        const backToTopBtn = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.remove('hidden');
-            } else {
-                backToTopBtn.classList.add('hidden');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elements
+            const slider = document.getElementById('partners-slider');
+            const prevButton = document.getElementById('prev-partner');
+            const nextButton = document.getElementById('next-partner');
+            const dots = document.querySelectorAll('.dot');
+            const partnerItems = document.querySelectorAll('#partners-slider > div');
+            
+            // Configuration
+            let currentIndex = 0;
+            let isAnimating = false;
+            let slideInterval;
+            const autoSlideDelay = 6000; // 6 seconds
+            const animationDuration = 600; // Match with CSS transition duration
+            
+            // Calculate visible items based on screen size
+            function getVisibleItemsCount() {
+                if (window.innerWidth >= 1024) return 4; // Desktop
+                if (window.innerWidth >= 768) return 3;  // Tablet
+                return 1;                                // Mobile
             }
-        });
-        
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            
+            // Calculate total slides based on visible items
+            function getTotalSlides() {
+                const visibleItems = getVisibleItemsCount();
+                return Math.ceil(partnerItems.length / visibleItems);
+            }
+            
+            // Update slider position with smooth transition
+            function updateSlider(immediate = false) {
+                if (isAnimating) return;
+                isAnimating = true;
+                
+                const visibleItems = getVisibleItemsCount();
+                const totalSlides = getTotalSlides();
+                
+                // Ensure currentIndex is within bounds
+                currentIndex = (currentIndex + totalSlides) % totalSlides;
+                
+                // Calculate the width to move (percentage of container)
+                const movePercentage = (currentIndex * 100) / visibleItems;
+                
+                if (immediate) {
+                    slider.style.transition = 'none';
+                } else {
+                    slider.style.transition = `transform ${animationDuration}ms cubic-bezier(0.4, 0, 0.2, 1)`;
+                }
+                
+                slider.style.transform = `translateX(-${movePercentage}%)`;
+                
+                // Update active dot
+                dots.forEach((dot, index) => {
+                    const dotElement = dot;
+                    if (index === currentIndex) {
+                        dotElement.classList.add('active');
+                        dotElement.setAttribute('aria-current', 'true');
+                    } else {
+                        dotElement.classList.remove('active');
+                        dotElement.removeAttribute('aria-current');
+                    }
+                });
+                
+                // Reset animation flag after transition
+                if (!immediate) {
+                    setTimeout(() => {
+                        isAnimating = false;
+                    }, animationDuration);
+                } else {
+                    // Force reflow
+                    void slider.offsetHeight;
+                    isAnimating = false;
+                }
+            }
+            
+            // Next slide
+            function nextSlide() {
+                if (isAnimating) return;
+                const totalSlides = getTotalSlides();
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlider();
+                resetAutoSlide();
+            }
+            
+            // Previous slide
+            function prevSlide() {
+                if (isAnimating) return;
+                const totalSlides = getTotalSlides();
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateSlider();
+                resetAutoSlide();
+            }
+            
+            // Go to specific slide
+            function goToSlide(index) {
+                if (isAnimating) return;
+                currentIndex = index % getTotalSlides();
+                updateSlider();
+                resetAutoSlide();
+            }
+            
+            // Auto slide functionality
+            function startAutoSlide() {
+                stopAutoSlide();
+                slideInterval = setInterval(nextSlide, autoSlideDelay);
+            }
+            
+            function stopAutoSlide() {
+                if (slideInterval) {
+                    clearInterval(slideInterval);
+                }
+            }
+            
+            function resetAutoSlide() {
+                stopAutoSlide();
+                startAutoSlide();
+            }
+            
+            // Event listeners
+            nextButton.addEventListener('click', nextSlide);
+            prevButton.addEventListener('click', prevSlide);
+            
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToSlide(index));
             });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            });
+            
+            // Touch events for mobile swipe
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            slider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAutoSlide();
+            }, { passive: true });
+            
+            slider.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+                startAutoSlide();
+            }, { passive: true });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50; // Minimum distance to trigger slide change
+                const swipeDistance = touchStartX - touchEndX;
+                
+                if (Math.abs(swipeDistance) < swipeThreshold) return;
+                
+                if (swipeDistance > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+            
+            // Pause auto-slide on hover
+            const sliderContainer = document.querySelector('.partners-slider');
+            sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+            sliderContainer.addEventListener('mouseleave', startAutoSlide);
+            
+            // Handle window resize
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    updateSlider(true);
+                }, 250);
+            });
+            
+            // Initialize
+            updateSlider(true);
+            startAutoSlide();
+            
+            // Add loading class to body to prevent FOUC
+            document.body.classList.add('js-loaded');
         });
     </script>
 </body>

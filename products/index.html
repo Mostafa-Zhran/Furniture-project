@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منتجاتنا | نظم التظليل والهياكل المعدنية</title>
     <meta name="description" content="اكتشف مجموعة منتجاتنا المتميزة من أنظمة التظليل والهياكل المعدنية. نوفر حلولاً مبتكرة وعالية الجودة تناسب كافة الاحتياجات.">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -34,6 +36,9 @@
                     <a href="../about/" class="hover:text-blue-200 transition">من نحن</a>
                     <a href="../contact/" class="hover:text-blue-200 transition">اتصل بنا</a>
                     <a href="../blog/" class="hover:text-blue-200 transition">المدونة</a>
+                    <button id="theme-toggle" class="text-blue-100 hover:text-white p-2 rounded-full focus:outline-none" aria-label="تبديل الوضع الليلي">
+                        <i class="fas fa-moon text-xl"></i>
+                    </button>
                 </div>
                 
                 <!-- Mobile menu button -->
@@ -46,12 +51,16 @@
             
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="../index.html" class="block py-2 hover:bg-blue-700 px-2 rounded">الرئيسية</a>
-                <a href="index.html" class="block py-2 bg-blue-900 px-2 rounded">المنتجات</a>
-                <a href="../services/" class="block py-2 hover:bg-blue-700 px-2 rounded">الخدمات</a>
-                <a href="../about/" class="block py-2 hover:bg-blue-700 px-2 rounded">من نحن</a>
-                <a href="../contact/" class="block py-2 hover:bg-blue-700 px-2 rounded">اتصل بنا</a>
-                <a href="../blog/" class="block py-2 hover:bg-blue-700 px-2 rounded">المدونة</a>
+                <a href="../index.html" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الرئيسية</a>
+                <a href="index.html" class="block py-2 bg-blue-900 px-2 rounded transition-colors">المنتجات</a>
+                <a href="../services/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الخدمات</a>
+                <a href="../about/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">من نحن</a>
+                <a href="../contact/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">اتصل بنا</a>
+                <a href="../blog/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المدونة</a>
+                <button id="mobile-theme-toggle" class="w-full text-right py-2 px-2 rounded flex items-center justify-end hover:bg-blue-700 transition-colors">
+                    <span class="ml-2">الوضع الليلي</span>
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -299,57 +308,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Back to top button
-        const backToTopBtn = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.remove('hidden');
-            } else {
-                backToTopBtn.classList.add('hidden');
-            }
-        });
-        
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Product filter functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const productItems = document.querySelectorAll('.product-item');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Update active filter button
-                filterButtons.forEach(btn => btn.classList.remove('bg-blue-700', 'text-white'));
-                filterButtons.forEach(btn => btn.classList.add('bg-white', 'border-gray-300', 'text-gray-700'));
-                button.classList.remove('bg-white', 'border-gray-300', 'text-gray-700');
-                button.classList.add('bg-blue-700', 'text-white');
-
-                // Filter products
-                const filter = button.getAttribute('data-filter');
-                productItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    </script>
+    <!-- Main JavaScript -->
+    <script src="../js/main.js"></script>
 </body>
 </html>

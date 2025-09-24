@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اتصل بنا | نظم التظليل والهياكل المعدنية</title>
     <meta name="description" content="تواصل مع فريقنا للحصول على استشارة مجانية حول أنظمة التظليل والهياكل المعدنية. نحن هنا لمساعدتك في العثور على الحل الأمثل لاحتياجاتك.">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -45,6 +47,9 @@
                     <a href="../about/" class="hover:text-blue-200 transition">من نحن</a>
                     <a href="#" class="text-blue-200 font-semibold">اتصل بنا</a>
                     <a href="../blog/" class="hover:text-blue-200 transition">المدونة</a>
+                    <button id="theme-toggle" class="text-blue-100 hover:text-white p-2 rounded-full focus:outline-none" aria-label="تبديل الوضع الليلي">
+                        <i class="fas fa-moon text-xl"></i>
+                    </button>
                 </div>
                 
                 <!-- Mobile menu button -->
@@ -57,12 +62,16 @@
             
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="../index.html" class="block py-2 hover:bg-blue-700 px-2 rounded">الرئيسية</a>
-                <a href="../products/" class="block py-2 hover:bg-blue-700 px-2 rounded">المنتجات</a>
-                <a href="../services/" class="block py-2 hover:bg-blue-700 px-2 rounded">الخدمات</a>
-                <a href="../about/" class="block py-2 hover:bg-blue-700 px-2 rounded">من نحن</a>
-                <a href="index.html" class="block py-2 bg-blue-900 px-2 rounded">اتصل بنا</a>
-                <a href="../blog/" class="block py-2 hover:bg-blue-700 px-2 rounded">المدونة</a>
+                <a href="../index.html" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الرئيسية</a>
+                <a href="../products/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المنتجات</a>
+                <a href="../services/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الخدمات</a>
+                <a href="../about/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">من نحن</a>
+                <a href="index.html" class="block py-2 bg-blue-900 px-2 rounded transition-colors">اتصل بنا</a>
+                <a href="../blog/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المدونة</a>
+                <button id="mobile-theme-toggle" class="w-full text-right py-2 px-2 rounded flex items-center justify-end hover:bg-blue-700 transition-colors">
+                    <span class="ml-2">الوضع الليلي</span>
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -318,4 +327,82 @@
                 <h2 class="text-2xl font-bold mb-4">اشترك في نشرتنا البريدية</h2>
                 <p class="text-gray-600 mb-6">احصل على آخر العروض والأخبار حول منتجاتنا وخدماتنا مباشرة إلى بريدك الإلكتروني</p>
                 <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                    <input type="email" placeholder=
+                    <input type="email" placeholder="بريدك الإلكتروني" required
+                        class="flex-grow px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit" 
+                        class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition font-medium">
+                        اشتراك
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">عن الشركة</h3>
+                    <p class="text-gray-400 mb-4">نحن رواد في مجال أنظمة التظليل والهياكل المعدنية، نقدم حلولاً مبتكرة وعصرية تلبي احتياجات عملائنا الكرام.</p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
+                        <li><a href="../about/" class="text-gray-400 hover:text-white transition">من نحن</a></li>
+                        <li><a href="../services/" class="text-gray-400 hover:text-white transition">خدماتنا</a></li>
+                        <li><a href="../products/" class="text-gray-400 hover:text-white transition">منتجاتنا</a></li>
+                        <li><a href="../blog/" class="text-gray-400 hover:text-white transition">المدونة</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">خدماتنا</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">تصميم وتركيب أنظمة التظليل</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">الهياكل المعدنية</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">صيانة أنظمة التظليل</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">الاستشارات الهندسية</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">حلول مخصصة</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">اتصل بنا</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 ml-2 text-blue-400"></i>
+                            <span class="text-gray-400">الرياض، المملكة العربية السعودية</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt ml-2 text-blue-400"></i>
+                            <a href="tel:+966501234567" class="text-gray-400 hover:text-white transition">+966 50 123 4567</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope ml-2 text-blue-400"></i>
+                            <a href="mailto:info@shadingsystems.com" class="text-gray-400 hover:text-white transition">info@shadingsystems.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center text-gray-400">
+                <p>© 2023 جميع الحقوق محفوظة لشركة نظم التظليل والهياكل المعدنية</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 left-6 bg-blue-700 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

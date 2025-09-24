@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أحدث تقنيات التظليل الذكي | نظم التظليل والهياكل المعدنية</title>
     <meta name="description" content="اكتشف أحدث تقنيات التظليل الذكي لعام 2023 وكيف يمكنها تحويل مساحاتك الخارجية إلى أماكن مريحة وعصرية مع توفير استهلاك الطاقة.">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -94,6 +96,9 @@
                     <a href="../about/" class="hover:text-blue-200 transition">من نحن</a>
                     <a href="../contact/" class="hover:text-blue-200 transition">اتصل بنا</a>
                     <a href="index.html" class="text-blue-200 font-semibold">المدونة</a>
+                    <button id="theme-toggle" class="text-blue-100 hover:text-white p-2 rounded-full focus:outline-none" aria-label="تبديل الوضع الليلي">
+                        <i class="fas fa-moon text-xl"></i>
+                    </button>
                 </div>
                 
                 <!-- Mobile menu button -->
@@ -106,12 +111,16 @@
             
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="../index.html" class="block py-2 hover:bg-blue-700 px-2 rounded">الرئيسية</a>
-                <a href="../products/" class="block py-2 hover:bg-blue-700 px-2 rounded">المنتجات</a>
-                <a href="../services/" class="block py-2 hover:bg-blue-700 px-2 rounded">الخدمات</a>
-                <a href="../about/" class="block py-2 hover:bg-blue-700 px-2 rounded">من نحن</a>
-                <a href="../contact/" class="block py-2 hover:bg-blue-700 px-2 rounded">اتصل بنا</a>
-                <a href="index.html" class="block py-2 bg-blue-900 px-2 rounded">المدونة</a>
+                <a href="../index.html" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الرئيسية</a>
+                <a href="../products/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">المنتجات</a>
+                <a href="../services/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">الخدمات</a>
+                <a href="../about/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">من نحن</a>
+                <a href="../contact/" class="block py-2 hover:bg-blue-700 px-2 rounded transition-colors">اتصل بنا</a>
+                <a href="index.html" class="block py-2 bg-blue-900 px-2 rounded transition-colors">المدونة</a>
+                <button id="mobile-theme-toggle" class="w-full text-right py-2 px-2 rounded flex items-center justify-end hover:bg-blue-700 transition-colors">
+                    <span class="ml-2">الوضع الليلي</span>
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -525,7 +534,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-6 text-center text-gray-400">
-                <p>© 2023 جميع الحقوق محفوظة لشركة نظم التظليل والهياكل المعدنية</p>
+                <p> 2023 جميع الحقوق محفوظة لشركة نظم التظليل والهياكل المعدنية</p>
             </div>
         </div>
     </footer>
@@ -535,64 +544,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-
-        // Back to top button
-        const backToTopBtn = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.remove('hidden');
-            } else {
-                backToTopBtn.classList.add('hidden');
-            }
-        });
-        
-        if (backToTopBtn) {
-            backToTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
-
-        // Table of Contents
-        document.addEventListener('DOMContentLoaded', function() {
-            const headings = document.querySelectorAll('h2, h3');
-            const toc = document.getElementById('table-of-contents');
-            
-            if (headings.length > 0 && toc) {
-                let tocHTML = '<h3 class="text-lg font-semibold mb-4">جدول المحتويات</h3><ul class="space-y-2">';
-                
-                headings.forEach((heading, index) => {
-                    const id = `heading-${index}`;
-                    heading.setAttribute('id', id);
-                    
-                    const level = heading.tagName.toLowerCase() === 'h2' ? '' : 'mr-4';
-                    tocHTML += `
-                        <li class="${level}">
-                            <a href="#${id}" class="text-blue-600 hover:text-blue-800 hover:underline">
-                                ${heading.textContent}
-                            </a>
-                        </li>
-                    `;
-                });
-                
-                tocHTML += '</ul>';
-                toc.innerHTML = tocHTML;
-            }
-        });
-    </script>
+    <!-- Main JavaScript -->
+    <script src="../js/main.js"></script>
 </body>
 </html>
